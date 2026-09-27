@@ -100,14 +100,33 @@ export const ProductPositioning: React.FC = () => {
   const active = concepts.find((c) => c.id === selectedConcept) || concepts[0];
 
   return (
-    <section className="py-20 lg:py-28 bg-slate-50/70 border-b border-slate-200 text-slate-800 relative overflow-hidden" id="positioning">
+    <section className="py-20 lg:py-28 bg-slate-50/70 border-b border-slate-200 text-slate-800 relative overflow-hidden" id="about">
+      <span id="positioning" className="sr-only">About NIRVANA</span>
       <div className="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
         
         {/* Section Header */}
         <div className="max-w-4xl mb-14 lg:mb-18">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-mono font-bold tracking-wider uppercase mb-3 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
-            Universal Safety Platform
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 p-1.5 pr-4 rounded-2xl bg-white border border-slate-200 shadow-xs">
+              <img
+                src="/nirvana-logo.png"
+                alt="NIRVANA Logo"
+                className="h-10 w-10 object-contain rounded-xl"
+              />
+              <div className="flex flex-col">
+                <span className="text-base font-black tracking-tight text-slate-950 font-sans leading-none">
+                  NIRVANA
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-purple-700 font-bold mt-0.5">
+                  Universal Personal Safety Technology
+                </span>
+              </div>
+            </div>
+
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-mono font-bold tracking-wider uppercase shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
+              Universal Safety Platform
+            </div>
           </div>
           
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.14]">
@@ -115,7 +134,7 @@ export const ProductPositioning: React.FC = () => {
           </h2>
 
           <div className="mt-3 flex flex-wrap items-center gap-3 text-sm font-semibold">
-            <span className="text-purple-700">NIRVANA — Universal Personal Safety Technology</span>
+            <span className="text-purple-700">NIRVANA &mdash; Safety, Wherever You Go.</span>
             <span className="text-slate-400">&bull;</span>
             <span className="text-blue-700">One Device. Multiple Ways to Stay Safe.</span>
           </div>
@@ -128,7 +147,7 @@ export const ProductPositioning: React.FC = () => {
           <div className="mt-6 p-4 rounded-xl bg-purple-50/80 border border-purple-200 flex items-center gap-3 text-xs sm:text-sm text-slate-700">
             <span className="material-symbols-outlined text-purple-700 text-[22px] shrink-0">info</span>
             <span>
-              <strong className="text-slate-900 font-semibold">Important Distinction:</strong> Footwear integration is one vital, high-efficacy application of the NIRVANA system — not the entire identity of the platform.
+              <strong className="text-slate-900 font-semibold">Important Distinction:</strong> Footwear integration is one vital, high-efficacy application of the NIRVANA system &mdash; not the entire identity of the platform.
             </span>
           </div>
         </div>

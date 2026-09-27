@@ -22,12 +22,16 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({
 
         {/* Brand Logo & Success Icon */}
         <div className="flex flex-col items-center">
-          <div className="p-1 rounded-xl bg-purple-950/80 border border-purple-500/30 mb-3">
+          <div className="flex items-center gap-2.5 p-1.5 px-3.5 rounded-xl bg-purple-950/80 border border-purple-500/30 mb-3 shadow-md">
             <img
               src="/nirvana-logo.png"
               alt="NIRVANA Logo"
-              className="h-8 w-auto object-contain rounded-lg"
+              className="h-8 w-8 object-contain rounded-lg"
             />
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-black text-white leading-none">NIRVANA</span>
+              <span className="text-[9px] font-mono text-purple-300 font-semibold uppercase mt-0.5">Universal Safety</span>
+            </div>
           </div>
 
           <div className="w-14 h-14 rounded-2xl bg-emerald-950 border border-emerald-500/50 text-emerald-400 mx-auto flex items-center justify-center shadow-lg shadow-emerald-950/80">

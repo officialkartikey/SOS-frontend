@@ -44,24 +44,26 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       
       <div className="relative z-10 flex flex-col items-center max-w-md px-6 text-center">
         {/* Official Uploaded Logo */}
-        <div className="relative p-2 rounded-2xl bg-white/5 border border-purple-500/20 backdrop-blur-md shadow-2xl mb-8 group hover:border-purple-500/40 transition-all">
+        <div className="relative p-2.5 rounded-2xl bg-white/5 border border-purple-500/30 backdrop-blur-md shadow-2xl mb-5 group hover:border-purple-500/50 transition-all flex flex-col items-center">
           <img
             src="/nirvana-logo.png"
-            alt="NIRVANA Logo"
-            className="h-14 sm:h-16 w-auto object-contain rounded-xl"
+            alt="NIRVANA Official Logo"
+            className="h-16 w-16 sm:h-20 sm:w-20 object-contain rounded-xl shadow-lg"
           />
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-purple-600/90 text-[10px] font-mono font-bold tracking-widest uppercase border border-purple-400/50 shadow-sm">
-            Safety Platform
-          </div>
         </div>
 
-        {/* Brand Tagline */}
-        <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-2">
-          Universal Personal Safety Technology
-        </h2>
-        <p className="text-xs sm:text-sm text-slate-400 font-mono mb-8">
-          "Safety shouldn't depend on having your phone in your hand."
-        </p>
+        {/* Brand Structure: Logo + NIRVANA + Universal Personal Safety Technology */}
+        <div className="space-y-1 mb-6 text-center">
+          <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white font-sans leading-none">
+            NIRVANA
+          </h1>
+          <div className="text-xs sm:text-sm font-mono font-semibold tracking-wider text-purple-300 uppercase">
+            Universal Personal Safety Technology
+          </div>
+          <div className="text-xs text-slate-300 font-medium pt-1">
+            "NIRVANA &mdash; Safety, Wherever You Go."
+          </div>
+        </div>
 
         {/* Progress bar */}
         <div className="w-64 h-1.5 bg-slate-800 rounded-full overflow-hidden mb-4 relative">
@@ -78,7 +80,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         </div>
 
         <span className="mt-8 text-[11px] text-slate-500">
-          Click anywhere to skip
+          Click anywhere to enter
         </span>
       </div>
     </div>

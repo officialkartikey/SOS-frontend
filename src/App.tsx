@@ -14,6 +14,7 @@ import { MobileApp } from './components/MobileApp';
 import { SafetyEcosystem } from './components/SafetyEcosystem';
 import { UseCases } from './components/UseCases';
 import { Achievements } from './components/Achievements';
+import { Team } from './components/Team';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { SuccessModal } from './components/SuccessModal';
@@ -81,6 +82,9 @@ export const App: React.FC = () => {
 
         {/* Product Journey & Verified Achievements */}
         <Achievements />
+
+        {/* Engineering & Multidisciplinary Team */}
+        <Team />
 
         {/* Final CTA & Demo Request */}
         <Contact onSuccessSubmit={handleSuccessSubmit} />

@@ -72,35 +72,43 @@ export const Hero: React.FC = () => {
           {/* Left Column: Brand, Vision & Copy (6 Cols) */}
           <div className="lg:col-span-6 space-y-6 sm:space-y-7">
             
-            {/* Official Logo Banner & Status Tag */}
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="p-1 rounded-xl bg-slate-50 border border-slate-200 shadow-xs">
+            {/* Official Brand Presentation: [UPLOADED LOGO] + NIRVANA / Universal Personal Safety Technology */}
+            <div className="flex flex-wrap items-center gap-3.5">
+              <div className="flex items-center gap-3 p-1.5 pr-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
                 <img
                   src="/nirvana-logo.png"
-                  alt="NIRVANA Logo"
-                  className="h-10 sm:h-12 w-auto object-contain rounded-lg"
+                  alt="NIRVANA Official Logo"
+                  className="h-12 w-12 sm:h-14 sm:w-14 object-contain rounded-xl shadow-xs"
                 />
+                <div className="flex flex-col text-left">
+                  <span className="text-lg sm:text-xl font-black tracking-tight text-slate-950 font-sans leading-none">
+                    NIRVANA
+                  </span>
+                  <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-wider text-purple-700 uppercase mt-1">
+                    Universal Personal Safety Technology
+                  </span>
+                </div>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-semibold shadow-xs">
+              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-semibold shadow-xs">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-600"></span>
                 </span>
-                <span>Universal Personal Safety Technology</span>
+                <span>Universal SOS Safety Device</span>
               </div>
             </div>
 
             {/* Main Headline & Supporting Positioning */}
             <div className="space-y-3.5">
               <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.5rem] font-bold text-slate-950 tracking-tight leading-[1.12]">
-                Safety, <br />
+                NIRVANA &mdash; <br />
                 <span className="text-purple-600">
-                  Wherever You Go.
+                  Safety, Wherever You Go.
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-xl">
-                A universal SOS safety device built for real-time location tracking, fall detection, geofencing and emergency alerts.
+                A universal SOS safety device built for real-time location detection, autonomous fall detection, geofencing, SOS alerts, mobile application, and connected safety monitoring.
               </p>
             </div>
 
@@ -202,14 +210,14 @@ export const Hero: React.FC = () => {
 
                     {/* Central Brand Badge & SOS Actuator */}
                     <div className="relative z-10 flex flex-col items-center text-center">
-                      <div className="w-12 h-12 rounded-xl bg-purple-900/60 border border-purple-400/40 flex items-center justify-center shadow-inner mb-1.5 p-1">
-                        <img src="/nirvana-logo.png" alt="NIRVANA" className="h-7 w-auto object-contain" />
+                      <div className="w-14 h-14 rounded-2xl bg-slate-900 border border-purple-400/40 flex items-center justify-center shadow-inner mb-2 p-1.5">
+                        <img src="/nirvana-logo.png" alt="NIRVANA Logo" className="h-full w-full object-contain rounded-xl" />
                       </div>
 
-                      <span className="font-extrabold text-sm sm:text-base tracking-widest text-white uppercase">
+                      <span className="font-extrabold text-base sm:text-lg tracking-wider text-white uppercase">
                         NIRVANA
                       </span>
-                      <span className="text-[9px] font-mono text-cyan-300 font-semibold tracking-wider uppercase">
+                      <span className="text-[10px] font-mono text-cyan-300 font-semibold tracking-wider uppercase">
                         Universal SOS Core
                       </span>
 

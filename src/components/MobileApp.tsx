@@ -21,9 +21,27 @@ export const MobileApp: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 lg:mb-16">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono font-bold tracking-wider uppercase mb-3 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-cyan-600 animate-ping"></span>
-              Connected Guardian Experience
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 p-1.5 pr-4 rounded-2xl bg-white border border-slate-200 shadow-xs">
+                <img
+                  src="/nirvana-logo.png"
+                  alt="NIRVANA Logo"
+                  className="h-10 w-10 object-contain rounded-xl"
+                />
+                <div className="flex flex-col">
+                  <span className="text-base font-black tracking-tight text-slate-950 font-sans leading-none">
+                    NIRVANA
+                  </span>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-purple-700 font-bold mt-0.5">
+                    Universal Personal Safety Technology
+                  </span>
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono font-bold tracking-wider uppercase shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-cyan-600 animate-ping"></span>
+                Connected Guardian Experience
+              </div>
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.14]">
@@ -100,9 +118,12 @@ export const MobileApp: React.FC = () => {
               {activeScreen === 'dashboard' && (
                 <div className="space-y-4 animate-fadeIn">
                   <div className="flex items-center justify-between pt-1">
-                    <div>
-                      <span className="text-[11px] font-mono text-purple-400">NIRVANA SENTINEL</span>
-                      <h3 className="text-lg font-extrabold text-white">Safety Dashboard</h3>
+                    <div className="flex items-center gap-2.5">
+                      <img src="/nirvana-logo.png" alt="NIRVANA" className="h-8 w-8 object-contain rounded-lg shadow-xs" />
+                      <div>
+                        <span className="text-[10px] font-mono text-purple-400 font-bold tracking-wider">NIRVANA SENTINEL</span>
+                        <h3 className="text-base font-extrabold text-white leading-tight">Safety Dashboard</h3>
+                      </div>
                     </div>
                     <span className="px-2 py-0.5 rounded-full bg-emerald-950 border border-emerald-500/40 text-[10px] font-mono text-emerald-400 font-bold">
                       ACTIVE
@@ -113,7 +134,7 @@ export const MobileApp: React.FC = () => {
                   <div className="p-4 rounded-2xl bg-navy-900 border border-slate-800 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-purple-900/60 border border-purple-500/30 flex items-center justify-center p-1">
-                        <img src="/nirvana-logo.png" alt="NIRVANA" className="h-5 w-auto object-contain" />
+                        <img src="/nirvana-logo.png" alt="NIRVANA" className="h-8 w-8 object-contain rounded-lg" />
                       </div>
                       <div>
                         <div className="text-xs font-bold text-white">NIRVANA Pod #01</div>

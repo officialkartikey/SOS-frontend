@@ -147,9 +147,27 @@ export const Device3D: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 lg:mb-16">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-mono font-bold tracking-wider uppercase mb-3 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
-              Interactive Hardware Architecture
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 p-1.5 pr-4 rounded-2xl bg-white border border-slate-200 shadow-xs">
+                <img
+                  src="/nirvana-logo.png"
+                  alt="NIRVANA Logo"
+                  className="h-10 w-10 object-contain rounded-xl"
+                />
+                <div className="flex flex-col">
+                  <span className="text-base font-black tracking-tight text-slate-950 font-sans leading-none">
+                    NIRVANA
+                  </span>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-purple-700 font-bold mt-0.5">
+                    Universal Personal Safety Technology
+                  </span>
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-mono font-bold tracking-wider uppercase shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
+                Hardware Architecture
+              </div>
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.14]">

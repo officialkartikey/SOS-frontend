@@ -101,14 +101,33 @@ export const CoreFeatures: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-white border-b border-slate-200 text-slate-800 relative overflow-hidden" id="features">
+    <section className="py-20 lg:py-28 bg-white border-b border-slate-200 text-slate-800 relative overflow-hidden" id="product">
+      <span id="features" className="sr-only">Core Features</span>
       <div className="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
         
         {/* Section Header */}
         <div className="max-w-4xl mb-14 lg:mb-18">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-mono font-bold tracking-wider uppercase mb-3 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
-            Comprehensive Capabilities
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 p-1.5 pr-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-xs">
+              <img
+                src="/nirvana-logo.png"
+                alt="NIRVANA Logo"
+                className="h-10 w-10 object-contain rounded-xl"
+              />
+              <div className="flex flex-col">
+                <span className="text-base font-black tracking-tight text-slate-950 font-sans leading-none">
+                  NIRVANA
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-purple-700 font-bold mt-0.5">
+                  Universal Personal Safety Technology
+                </span>
+              </div>
+            </div>
+
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-mono font-bold tracking-wider uppercase shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
+              Core Product Architecture
+            </div>
           </div>
           
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.14]">

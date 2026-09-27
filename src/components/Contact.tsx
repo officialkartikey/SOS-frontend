@@ -21,17 +21,27 @@ export const Contact: React.FC<ContactProps> = ({ onSuccessSubmit }) => {
         {/* Final CTA Banner */}
         <div className="rounded-3xl bg-gradient-to-r from-purple-900 via-indigo-950 to-slate-900 text-white p-8 sm:p-12 lg:p-16 mb-16 shadow-xl relative overflow-hidden text-center max-w-5xl mx-auto">
           <div className="relative z-10 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-800/60 border border-purple-400/40 text-purple-200 text-xs font-mono font-bold tracking-widest uppercase shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-              Universal Personal Safety Platform
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <div className="flex items-center gap-2.5 p-1.5 px-3.5 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm shadow-xs">
+                <img
+                  src="/nirvana-logo.png"
+                  alt="NIRVANA Logo"
+                  className="h-9 w-9 object-contain rounded-xl"
+                />
+                <span className="text-base font-black text-white font-sans tracking-tight">NIRVANA</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-800/60 border border-purple-400/40 text-purple-200 text-xs font-mono font-bold tracking-widest uppercase shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                Universal Personal Safety Platform
+              </div>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
-              Your Safety. Your Location. Your Lifeline.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
+              NIRVANA &mdash; Safety, Wherever You Go.
             </h2>
 
-            <p className="text-base sm:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed font-normal">
-              NIRVANA is a small, connected safety device that can accompany you anywhere and provide location awareness, fall detection, geofencing and SOS emergency assistance.
+            <p className="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto leading-relaxed font-normal">
+              NIRVANA is a small, connected safety device that can accompany you anywhere and provide real-time location detection, fall detection, geofencing, SOS alerts, and emergency assistance.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">

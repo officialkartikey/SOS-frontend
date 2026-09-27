@@ -107,15 +107,34 @@ export const HowItWorks: React.FC = () => {
   const current = steps[activeStep];
 
   return (
-    <section className="py-20 lg:py-28 bg-white border-b border-slate-200 text-slate-800 relative overflow-hidden" id="how-it-works">
+    <section className="py-20 lg:py-28 bg-white border-b border-slate-200 text-slate-800 relative overflow-hidden" id="technology">
+      <span id="how-it-works" className="sr-only">How NIRVANA Works</span>
       <div className="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14 lg:mb-18">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-mono font-bold tracking-wider uppercase mb-3 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
-              End-to-End Autonomous Pipeline
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 p-1.5 pr-4 rounded-2xl bg-slate-50 border border-slate-200 shadow-xs">
+                <img
+                  src="/nirvana-logo.png"
+                  alt="NIRVANA Logo"
+                  className="h-10 w-10 object-contain rounded-xl"
+                />
+                <div className="flex flex-col">
+                  <span className="text-base font-black tracking-tight text-slate-950 font-sans leading-none">
+                    NIRVANA
+                  </span>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-purple-700 font-bold mt-0.5">
+                    Universal Personal Safety Technology
+                  </span>
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-mono font-bold tracking-wider uppercase shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
+                End-to-End Technology Pipeline
+              </div>
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.14]">
@@ -123,7 +142,7 @@ export const HowItWorks: React.FC = () => {
             </h2>
             
             <p className="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-              Trace the sub-second journey of a safety event from kinetic detection to emergency contact dispatch.
+              Trace the sub-second journey of a safety event from kinetic detection to emergency contact dispatch across the NIRVANA connected safety platform.
             </p>
           </div>
 
