@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Apex SoleTech — Smart Safety Footwear Sole for Connected Industrial Safety</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Hanken Grotesk', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#fef2f2',
+              100: '#fee2e2',
+              200: '#fecaca',
+              300: '#fca5a5',
+              400: '#f87171',
+              500: '#ef4444',
+              600: '#dc2626',
+              700: '#b91c1c',
+              800: '#991b1b',
+              900: '#7f1d1d',
+            }
+          },
+          maxWidth: {
+            'screen-3xl': '1840px',
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Hanken Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(1.08); }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-subtle 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes ping-slow {
+      0% { transform: scale(1); opacity: 0.8; }
+      80%, 100% { transform: scale(2.2); opacity: 0; }
+    }
+    .animate-ping-slow {
+      animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .sole-layer-interactive {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    .sole-layer-interactive:hover {
+      filter: drop-shadow(0 10px 20px rgba(15, 23, 42, 0.18));
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
+
+  <!-- 1. NAVIGATION BAR (EXPANSIVE FULL-SCREEN CONTAINER) -->
+  <header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs transition-all">
+    <div class="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 h-20 flex items-center justify-between gap-6">
+      
+      <!-- Brand Logo -->
+      <a class="flex items-center gap-3.5 shrink-0 group" href="#">
+        <div class="w-11 h-11 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-sm group-hover:bg-brand-700 transition-colors">
+          <span class="material-symbols-outlined text-[24px]">health_and_safety</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-bold tracking-tight text-slate-900 leading-tight">Apex SoleTech</span>
+          <span class="text-[11px] font-semibold text-slate-500 tracking-wider uppercase">Industrial Life-Safety Solutions</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 xl:gap-10 text-sm font-semibold text-slate-600">
+        <a class="hover:text-brand-600 transition-colors py-2 relative group" href="#overview">
+          Overview
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-600 transition-all group-hover:w-full"></span>
+        </a>
+        <a class="hover:text-brand-600 transition-colors py-2 relative group" href="#architecture">
+          Architecture
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-600 transition-all group-hover:w-full"></span>
+        </a>
+        <a class="hover:text-brand-600 transition-colors py-2 relative group" href="#biomechanics">
+          Biomechanics
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-600 transition-all group-hover:w-full"></span>
+        </a>
+        <a class="hover:text-brand-600 transition-colors py-2 relative group" href="#applications">
+          Applications
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-600 transition-all group-hover:w-full"></span>
+        </a>
+        <a class="hover:text-brand-600 transition-colors py-2 relative group" href="#achievements">
+          Achievements
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-600 transition-all group-hover:w-full"></span>
+        </a>
+        <a class="hover:text-brand-600 transition-colors py-2 relative group" href="#contact">
+          Contact
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-600 transition-all group-hover:w-full"></span>
+        </a>
+      </nav>
+
+      <!-- Action & Certification Badges -->
+      <div class="flex items-center gap-3.5 sm:gap-4">
+        <!-- Live System Telemetry Status -->
+        <div class="hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-medium text-slate-700">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span class="font-mono text-[11px] text-slate-600">Mesh Active: 99.98%</span>
+        </div>
+
+        <!-- Certified Badge -->
+        <div class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700 whitespace-nowrap">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+          <span>ANSI &amp; ISO-20345 Certified</span>
+        </div>
+
+        <!-- CTA Button -->
+        <a class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold shadow-sm transition-all focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 whitespace-nowrap" href="#contact">
+          Schedule Demo
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-300">
+          <span class="material-symbols-outlined text-[26px]">menu</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Slide-Down Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-5 shadow-lg">
+      <nav class="flex flex-col gap-4 text-base font-semibold text-slate-700">
+        <a class="hover:text-brand-600 transition-colors py-1.5 flex items-center justify-between" href="#overview">
+          <span>Overview</span>
+          <span class="material-symbols-outlined text-slate-400 text-[18px]">chevron_right</span>
+        </a>
+        <a class="hover:text-brand-600 transition-colors py-1.5 flex items-center justify-between" href="#architecture">
+          <span>Architecture</span>
+          <span class="material-symbols-outlined text-slate-400 text-[18px]">chevron_right</span>
+        </a>
+        <a class="hover:text-brand-600 transition-colors py-1.5 flex items-center justify-between" href="#biomechanics">
+          <span>Biomechanics &amp; Heatmap</span>
+          <span class="material-symbols-outlined text-slate-400 text-[18px]">chevron_right</span>
+        </a>
+        <a class="hover:text-brand-600 transition-colors py-1.5 flex items-center justify-between" href="#applications">
+          <span>Applications</span>
+          <span class="material-symbols-outlined text-slate-400 text-[18px]">chevron_right</span>
+        </a>
+        <a class="hover:text-brand-600 transition-colors py-1.5 flex items-center justify-between" href="#achievements">
+          <span>Achievements</span>
+          <span class="material-symbols-outlined text-slate-400 text-[18px]">chevron_right</span>
+        </a>
+        <a class="hover:text-brand-600 transition-colors py-1.5 flex items-center justify-between" href="#contact">
+          <span>Contact</span>
+          <span class="material-symbols-outlined text-slate-400 text-[18px]">chevron_right</span>
+        </a>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            ANSI &amp; ISO-20345 Certified
+          </span>
+          <span class="font-mono">Sub-GHz RF</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- 2. HERO SECTION (EXPANSIVE FULL-SCREEN VIEWPORT FIT) -->
+    <section class="relative min-h-[calc(100vh-5rem)] flex flex-col justify-center py-8 lg:py-12 xl:py-14 bg-gradient-to-b from-slate-50 via-white to-white border-b border-slate-200 overflow-hidden">
+      <!-- Background subtle technical grid lines -->
+      <div class="absolute inset-0 opacity-[0.025] pointer-events-none" style="background-size: 40px 40px; background-image: linear-gradient(to right, #0f172a 1px, transparent 1px), linear-gradient(to bottom, #0f172a 1px, transparent 1px);"></div>
+      
+      <div class="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
+          
+          <!-- Left Column: Copy & Value Proposition (5 Cols) -->
+          <div class="lg:col-span-6 xl:col-span-5 space-y-6 xl:space-y-7">
+            
+            <!-- Telematics Pill Badge -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold shadow-xs">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-600"></span>
+              </span>
+              <span>Next-Generation Worker Telematics</span>
+              <span class="text-brand-300">|</span>
+              <span class="font-mono text-[11px] text-brand-600 font-medium">IoT Sole Platform</span>
+            </div>
+
+            <!-- Main Heading with responsive high-density typography -->
+            <div class="space-y-3.5">
+              <h1 class="text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.5rem] font-bold text-slate-950 tracking-tight leading-[1.12]">
+                Smart Safety Footwear Sole for Connected Industrial Safety
+              </h1>
+              <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl">
+                Transform standard protective boots into autonomous life-safety nodes. Our embedded sensor matrix delivers sub-second man-down fall alerts, ergonomic risk prevention, and mesh-connected worker location tracking.
+              </p>
+            </div>
+
+            <!-- CTA Row -->
+            <div class="flex flex-wrap items-center gap-4 pt-1">
+              <a class="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold shadow-sm hover:shadow-md transition-all focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 whitespace-nowrap" href="#contact">
+                <span>Request Enterprise Pilot</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+              <a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 text-slate-700 text-sm font-semibold shadow-xs transition-colors whitespace-nowrap" href="#architecture">
+                <span class="material-symbols-outlined text-[18px] text-slate-500">layers</span>
+                <span>Explore Sole Stack</span>
+              </a>
+            </div>
+
+            <!-- Primary Key Metrics Grid (Expansive 4 Cards) -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-5 border-t border-slate-200">
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 transition-colors">
+                <div class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">&lt; 1.2s</div>
+                <div class="text-xs font-medium text-slate-500 mt-1">Alert Latency</div>
+                <div class="text-[10px] text-brand-600 font-semibold mt-1 flex items-center gap-0.5">
+                  <span class="material-symbols-outlined text-[12px]">bolt</span> Sub-second
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 transition-colors">
+                <div class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">72 Hours</div>
+                <div class="text-xs font-medium text-slate-500 mt-1">Battery Life</div>
+                <div class="text-[10px] text-emerald-600 font-semibold mt-1 flex items-center gap-0.5">
+                  <span class="material-symbols-outlined text-[12px]">autorenew</span> Kinetic Assist
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 transition-colors">
+                <div class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">IP67</div>
+                <div class="text-xs font-medium text-slate-500 mt-1">Ingress Shield</div>
+                <div class="text-[10px] text-slate-600 font-semibold mt-1 flex items-center gap-0.5">
+                  <span class="material-symbols-outlined text-[12px]">shield</span> Hermetic Seal
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 transition-colors">
+                <div class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">1,100 N</div>
+                <div class="text-xs font-medium text-slate-500 mt-1">Kevlar Plate</div>
+                <div class="text-[10px] text-amber-700 font-semibold mt-1 flex items-center gap-0.5">
+                  <span class="material-symbols-outlined text-[12px]">verified</span> ISO 20345
+                </div>
+              </div>
+            </div>
+
+            <!-- Active Device Live Status Micro-Ticker -->
+            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>Active Telemetry Node:</span>
+                <span class="font-mono text-slate-900 font-semibold">UNIT #APX-704-B</span>
+              </div>
+              <div class="flex items-center gap-3 text-slate-500 font-mono text-[11px]">
+                <span>RSSI: -44 dBm</span>
+                <span class="text-slate-300">|</span>
+                <span class="text-emerald-600 font-semibold">NOMINAL</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive 3D Architecture Visualizer (7 Cols) -->
+          <div class="lg:col-span-6 xl:col-span-7">
+            <div class="rounded-2xl bg-white border border-slate-200 shadow-xl overflow-hidden flex flex-col transition-all">
+              
+              <!-- Visualizer Header with View Switcher Tabs -->
+              <div class="flex flex-wrap items-center justify-between px-5 py-3.5 bg-slate-50 border-b border-slate-200 gap-3">
+                <div class="flex items-center gap-2.5">
+                  <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                  </span>
+                  <span class="font-bold text-slate-800 text-sm tracking-tight">Interactive Sole Architecture Model</span>
+                  <span class="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200/80 text-slate-700 font-mono uppercase">Cad Engine</span>
+                </div>
+
+                <!-- View Switcher Tabs -->
+                <div class="flex items-center bg-white p-1 rounded-lg border border-slate-200 text-xs font-semibold">
+                  <button id="tabExplodedBtn" class="px-3 py-1.5 rounded-md bg-brand-600 text-white shadow-xs transition-all flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[15px]">layers</span>
+                    <span>Exploded 3D</span>
+                  </button>
+                  <button id="tabHeatmapBtn" class="px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[15px]">grid_4x4</span>
+                    <span>Pressure Grid</span>
+                  </button>
+                  <button id="tabTelemetryBtn" class="px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[15px]">query_stats</span>
+                    <span>Live Telemetry</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- VIEW 1: 3D EXPLODED SOLE STACK WITH REALISTIC CONTOURS & ZERO TEXT OVERLAP -->
+              <div id="viewExploded" class="relative w-full bg-gradient-to-b from-slate-50/80 via-white to-slate-100/50 p-4 sm:p-6 overflow-hidden">
+                
+                <!-- Main Expansive SVG (viewBox 0 0 960 510 gives 350px width for callout boxes) -->
+                <div class="w-full flex items-center justify-center">
+                  <svg class="w-full max-w-4xl h-auto drop-shadow-sm select-none" viewBox="0 0 960 510" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="cushionGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#f8fafc"/>
+                        <stop offset="100%" stop-color="#e2e8f0"/>
+                      </linearGradient>
+                      <linearGradient id="kevlarGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#fef3c7"/>
+                        <stop offset="100%" stop-color="#fde68a"/>
+                      </linearGradient>
+                      <linearGradient id="outsoleGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#0f172a"/>
+                        <stop offset="100%" stop-color="#1e293b"/>
+                      </linearGradient>
+                      <pattern id="kevlarPattern" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M0 5 L10 5 M5 0 L5 10" stroke="#d97706" stroke-width="0.7" opacity="0.3"/>
+                      </pattern>
+                      <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.10"/>
+                      </filter>
+                    </defs>
+
+                    <!-- LAYER 05: Upper Ergonomic Memory Cushion Layer (CY = 60) -->
+                    <g id="layer05" class="sole-layer-interactive" onclick="selectLayer(5)">
+                      <!-- 3D Depth Extrusion Bottom Rim -->
+                      <path d="M 75,60 C 70,78 95,95 140,95 C 185,95 220,78 270,80 C 320,82 365,98 420,96 C 475,94 515,76 520,56 L 520,64 C 515,84 475,102 420,104 C 365,106 320,90 270,88 C 220,86 185,103 140,103 C 95,103 70,86 75,68 Z" fill="#cbd5e1" opacity="0.85"></path>
+                      <!-- Main Sole Layer Surface (Anatomical Footprint Path) -->
+                      <path d="M 75,60 C 70,36 95,22 145,22 C 190,22 235,34 280,32 C 325,28 375,14 430,16 C 485,18 525,40 520,60 C 515,80 475,98 420,100 C 365,102 320,86 270,84 C 220,82 185,98 140,98 C 95,98 70,84 75,60 Z" fill="url(#cushionGrad)" stroke="#94a3b8" stroke-width="2" filter="url(#softGlow)"></path>
+                      
+                      <!-- Ergonomic Heel Shock Cushion Inlay -->
+                      <ellipse cx="140" cy="60" rx="30" ry="18" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="2 2"/>
+                      <!-- Forefoot Perforations -->
+                      <g fill="#94a3b8" opacity="0.6">
+                        <circle cx="340" cy="56" r="2"/><circle cx="370" cy="52" r="2"/><circle cx="400" cy="60" r="2"/><circle cx="430" cy="56" r="2"/><circle cx="460" cy="62" r="2"/>
+                        <circle cx="360" cy="68" r="2"/><circle cx="390" cy="72" r="2"/><circle cx="420" cy="70" r="2"/>
+                      </g>
+
+                      <!-- Leader Line to Dedicated Callout Box -->
+                      <path d="M 520,60 L 565,60 L 585,55" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="3 3"/>
+                      <circle cx="520" cy="60" r="3.5" fill="#475569"/>
+                      
+                      <!-- Callout Box 05 (Generous width 350px for complete text) -->
+                      <g transform="translate(585, 30)">
+                        <rect width="350" height="50" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#softGlow)"/>
+                        <rect width="4" height="50" rx="2" fill="#64748b"/>
+                        <text x="16" y="21" fill="#0f172a" font-size="12" font-weight="700">05. Ergonomic Memory Cushion Layer</text>
+                        <text x="16" y="38" fill="#64748b" font-size="10.5" font-weight="500">Antimicrobial Dual-Density PU Foam (12mm drop)</text>
+                      </g>
+                    </g>
+
+                    <!-- LAYER 04: Edge MCU, IMU & Kinetic Harvester Module (CY = 150) -->
+                    <g id="layer04" class="sole-layer-interactive" onclick="selectLayer(4)">
+                      <!-- 3D Depth Extrusion Bottom Rim -->
+                      <path d="M 78,150 C 73,168 98,185 143,185 C 188,185 223,168 273,170 C 323,172 368,188 423,186 C 478,184 518,166 523,146 L 523,154 C 518,174 478,192 423,194 C 368,196 323,180 273,178 C 223,176 188,193 143,193 C 98,193 73,176 78,158 Z" fill="#fee2e2" opacity="0.85"></path>
+                      <!-- Main Sole Layer Surface -->
+                      <path d="M 78,150 C 73,126 98,112 148,112 C 193,112 238,124 283,122 C 328,118 378,104 433,106 C 488,108 528,130 523,150 C 518,170 478,188 423,190 C 368,192 323,176 273,174 C 223,172 188,188 143,188 C 98,188 73,174 78,150 Z" fill="#ffffff" stroke="#dc2626" stroke-width="2.2" filter="url(#softGlow)"></path>
+                      
+                      <!-- Embedded ARM Cortex MCU IC -->
+                      <rect x="255" y="136" width="48" height="26" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1.2"/>
+                      <text x="279" y="153" fill="#ffffff" font-size="8.5" font-weight="700" text-anchor="middle" font-family="monospace">ARM 32b</text>
+                      
+                      <!-- Kinetic Dynamo & Solid-State Battery Cell -->
+                      <rect x="125" y="138" width="46" height="22" rx="3" fill="#dc2626" fill-opacity="0.12" stroke="#dc2626" stroke-width="1.2"/>
+                      <text x="148" y="152" fill="#dc2626" font-size="8" font-weight="700" text-anchor="middle">LiFePO4</text>
+                      
+                      <!-- RF Antenna & Signal Traces -->
+                      <path d="M 305,149 L 340,149 L 350,158 L 410,158" stroke="#dc2626" stroke-width="1.6" stroke-linecap="round"/>
+                      <circle cx="410" cy="158" r="2.5" fill="#dc2626"/>
+
+                      <!-- Leader Line to Dedicated Callout Box -->
+                      <path d="M 523,150 L 565,150 L 585,145" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 3"/>
+                      <circle cx="523" cy="150" r="3.5" fill="#dc2626"/>
+                      
+                      <!-- Callout Box 04 -->
+                      <g transform="translate(585, 120)">
+                        <rect width="350" height="50" rx="8" fill="#ffffff" stroke="#fecaca" stroke-width="1.5" filter="url(#softGlow)"/>
+                        <rect width="4" height="50" rx="2" fill="#dc2626"/>
+                        <text x="16" y="21" fill="#dc2626" font-size="12" font-weight="700">04. Edge MCU &amp; RF Harvester Module</text>
+                        <text x="16" y="38" fill="#64748b" font-size="10.5" font-weight="500">ARM Cortex-M4F • Sub-GHz Mesh • Kinetic Dynamo</text>
+                      </g>
+                    </g>
+
+                    <!-- LAYER 03: 8-Zone Tactile Piezoresistive Sensor Grid (CY = 240) -->
+                    <g id="layer03" class="sole-layer-interactive" onclick="selectLayer(3)">
+                      <!-- 3D Depth Extrusion Bottom Rim -->
+                      <path d="M 81,240 C 76,258 101,275 146,275 C 191,275 226,258 276,260 C 326,262 371,278 426,276 C 481,274 521,256 526,236 L 526,244 C 521,264 481,282 426,284 C 371,286 326,270 276,268 C 226,266 191,283 146,283 C 101,283 76,266 81,248 Z" fill="#dbeafe" opacity="0.85"></path>
+                      <!-- Main Sole Layer Surface -->
+                      <path d="M 81,240 C 76,216 101,202 151,202 C 196,202 241,214 286,212 C 331,208 381,194 436,196 C 491,198 531,220 526,240 C 521,260 481,278 426,280 C 371,282 326,266 276,264 C 226,262 191,278 146,278 C 101,278 76,264 81,240 Z" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5 3" filter="url(#softGlow)"></path>
+                      
+                      <!-- 8 Calibrated Sensor Nodes with Animated Glowing Rings -->
+                      <!-- Calcaneus Heel Nodes -->
+                      <circle cx="125" cy="235" r="9" fill="#ef4444" fill-opacity="0.25" class="animate-pulse-subtle"/>
+                      <circle cx="125" cy="235" r="4.5" fill="#dc2626"/>
+                      <circle cx="155" cy="245" r="8" fill="#ef4444" fill-opacity="0.25"/>
+                      <circle cx="155" cy="245" r="4" fill="#dc2626"/>
+
+                      <!-- Midfoot Lateral Node -->
+                      <circle cx="235" cy="230" r="7" fill="#ef4444" fill-opacity="0.25"/>
+                      <circle cx="235" cy="230" r="3.5" fill="#dc2626"/>
+
+                      <!-- Forefoot Metatarsal Nodes -->
+                      <circle cx="345" cy="230" r="8" fill="#ef4444" fill-opacity="0.25"/>
+                      <circle cx="345" cy="230" r="4" fill="#dc2626"/>
+                      <circle cx="380" cy="245" r="8" fill="#ef4444" fill-opacity="0.25"/>
+                      <circle cx="380" cy="245" r="4" fill="#dc2626"/>
+                      <circle cx="415" cy="230" r="8" fill="#ef4444" fill-opacity="0.25"/>
+                      <circle cx="415" cy="230" r="4" fill="#dc2626"/>
+                      <circle cx="450" cy="242" r="8" fill="#ef4444" fill-opacity="0.25"/>
+                      <circle cx="450" cy="242" r="4" fill="#dc2626"/>
+
+                      <!-- Hallux (Great Toe) Node -->
+                      <circle cx="490" cy="230" r="9.5" fill="#ef4444" fill-opacity="0.3" class="animate-pulse-subtle"/>
+                      <circle cx="490" cy="230" r="5" fill="#dc2626"/>
+
+                      <!-- Printed Flex Circuit Tracks -->
+                      <path d="M 125,235 Q 235,230 345,230 T 490,230" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+
+                      <!-- Leader Line to Dedicated Callout Box -->
+                      <path d="M 526,240 L 565,240 L 585,235" stroke="#3b82f6" stroke-width="1.8" stroke-dasharray="3 3"/>
+                      <circle cx="526" cy="240" r="3.5" fill="#3b82f6"/>
+                      
+                      <!-- Callout Box 03 -->
+                      <g transform="translate(585, 210)">
+                        <rect width="350" height="50" rx="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.5" filter="url(#softGlow)"/>
+                        <rect width="4" height="50" rx="2" fill="#3b82f6"/>
+                        <text x="16" y="21" fill="#1e40af" font-size="12" font-weight="700">03. 8-Point Tactile Force Matrix</text>
+                        <text x="16" y="38" fill="#64748b" font-size="10.5" font-weight="500">100 Hz Piezoresistive Grid • 0–1,500 kPa Range</text>
+                      </g>
+                    </g>
+
+                    <!-- LAYER 02: 1,100 N Kevlar Anti-Puncture Plate (CY = 330) -->
+                    <g id="layer02" class="sole-layer-interactive" onclick="selectLayer(2)">
+                      <!-- 3D Depth Extrusion Bottom Rim -->
+                      <path d="M 84,330 C 79,348 104,365 149,365 C 194,365 229,348 279,350 C 329,352 374,368 429,366 C 484,364 524,346 529,326 L 529,334 C 524,354 484,372 429,374 C 374,376 329,360 279,358 C 229,356 194,373 149,373 C 104,373 79,356 84,338 Z" fill="#fde68a" opacity="0.85"></path>
+                      <!-- Main Sole Layer Surface -->
+                      <path d="M 84,330 C 79,306 104,292 154,292 C 199,292 244,304 289,302 C 334,298 384,284 439,286 C 494,288 534,310 529,330 C 524,350 484,368 429,370 C 374,372 329,356 279,354 C 229,352 194,368 149,368 C 104,368 79,354 84,330 Z" fill="url(#kevlarGrad)" stroke="#d97706" stroke-width="2" filter="url(#softGlow)"></path>
+                      <!-- Kevlar Weave Pattern Fill -->
+                      <path d="M 84,330 C 79,306 104,292 154,292 C 199,292 244,304 289,302 C 334,298 384,284 439,286 C 494,288 534,310 529,330 C 524,350 484,368 429,370 C 374,372 329,356 279,354 C 229,352 194,368 149,368 C 104,368 79,354 84,330 Z" fill="url(#kevlarPattern)"></path>
+                      
+                      <!-- Kevlar Stamp -->
+                      <text x="315" y="336" fill="#92400e" font-size="9.5" font-weight="700" letter-spacing="0.8" text-anchor="middle">BALLISTIC KEVLAR • 1,100 N PENETRATION RESISTANT</text>
+
+                      <!-- Leader Line to Dedicated Callout Box -->
+                      <path d="M 529,330 L 565,330 L 585,325" stroke="#d97706" stroke-width="1.8" stroke-dasharray="3 3"/>
+                      <circle cx="529" cy="330" r="3.5" fill="#d97706"/>
+                      
+                      <!-- Callout Box 02 -->
+                      <g transform="translate(585, 300)">
+                        <rect width="350" height="50" rx="8" fill="#ffffff" stroke="#fef3c7" stroke-width="1.5" filter="url(#softGlow)"/>
+                        <rect width="4" height="50" rx="2" fill="#d97706"/>
+                        <text x="16" y="21" fill="#92400e" font-size="12" font-weight="700">02. Ballistic Kevlar Anti-Puncture Plate</text>
+                        <text x="16" y="38" fill="#64748b" font-size="10.5" font-weight="500">1,100 N Penetration Shield • EN ISO 20345 Compliant</text>
+                      </g>
+                    </g>
+
+                    <!-- LAYER 01: Nitrile High-Abrasion Outsole (SRC Rated) (CY = 420) -->
+                    <g id="layer01" class="sole-layer-interactive" onclick="selectLayer(1)">
+                      <!-- Heavy 3D Depth Extrusion (Thick Lug Tread) -->
+                      <path d="M 87,420 C 82,442 107,462 152,462 C 197,462 232,442 282,444 C 332,446 377,464 432,462 C 487,460 527,440 532,416 L 532,428 C 527,452 487,472 432,474 C 377,476 332,458 282,456 C 232,454 197,474 152,474 C 107,474 82,454 87,432 Z" fill="#020617" opacity="0.95"></path>
+                      <!-- Main Sole Layer Surface -->
+                      <path d="M 87,420 C 82,396 107,382 157,382 C 202,382 247,394 292,392 C 337,388 387,374 442,376 C 497,378 537,400 532,420 C 527,440 487,458 432,460 C 377,462 332,446 282,444 C 232,442 197,458 152,458 C 107,458 82,444 87,420 Z" fill="url(#outsoleGrad)" stroke="#0f172a" stroke-width="2.5" filter="url(#softGlow)"></path>
+                      
+                      <!-- Heavy Duty Anti-Slip Cleat Lugs -->
+                      <g fill="#475569" stroke="#334155" stroke-width="0.8">
+                        <rect x="130" y="420" width="18" height="9" rx="2"/>
+                        <rect x="165" y="424" width="20" height="9" rx="2"/>
+                        <rect x="210" y="418" width="20" height="9" rx="2"/>
+                        <rect x="330" y="412" width="22" height="9" rx="2"/>
+                        <rect x="375" y="422" width="22" height="9" rx="2"/>
+                        <rect x="420" y="416" width="22" height="9" rx="2"/>
+                        <rect x="465" y="424" width="22" height="9" rx="2"/>
+                      </g>
+
+                      <!-- Leader Line to Dedicated Callout Box -->
+                      <path d="M 532,420 L 565,420 L 585,415" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 3"/>
+                      <circle cx="532" cy="420" r="3.5" fill="#0f172a"/>
+                      
+                      <!-- Callout Box 01 -->
+                      <g transform="translate(585, 390)">
+                        <rect width="350" height="50" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#softGlow)"/>
+                        <rect width="4" height="50" rx="2" fill="#0f172a"/>
+                        <text x="16" y="21" fill="#0f172a" font-size="12" font-weight="700">01. Nitrile Armor Outsole (SRC Rated)</text>
+                        <text x="16" y="38" fill="#64748b" font-size="10.5" font-weight="500">Vulcanized High-Abrasion Rubber • Hydrocarbon Resistant</text>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+
+                <!-- Interactive Layer Detail Inspector Box (Updates dynamically on layer click) -->
+                <div id="layerDetailPanel" class="mt-4 p-4 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all">
+                  <div class="flex items-center gap-3.5">
+                    <div id="inspectorBadge" class="w-10 h-10 rounded-lg bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600 font-bold font-mono text-sm">
+                      03
+                    </div>
+                    <div>
+                      <h4 id="inspectorTitle" class="text-sm font-bold text-slate-900">Active Layer: 8-Point Tactile Piezoresistive Matrix</h4>
+                      <p id="inspectorDesc" class="text-xs text-slate-600">Calibrated flex-PCB nodes continuously track dynamic heel-to-toe load shifts at 100 Hz.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2 text-xs font-semibold shrink-0">
+                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">Click any layer to inspect</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- VIEW 2: LIVE PLANTAR PRESSURE HEATMAP (INTERACTIVE TAB) -->
+              <div id="viewHeatmap" class="hidden relative w-full bg-slate-50 p-6">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                  
+                  <!-- Left: Interactive Foot Plantar Map with 8 Heatmap Nodes -->
+                  <div class="md:col-span-6 flex flex-col items-center justify-center p-5 bg-white rounded-xl border border-slate-200 shadow-xs relative">
+                    <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Right Foot Plantar Force Map (Calibrated 100 Hz)</div>
+                    
+                    <div class="relative w-64 h-96 flex items-center justify-center">
+                      <!-- Anatomical Foot Sole Contour SVG -->
+                      <svg class="w-full h-full" viewBox="0 0 200 320" fill="none">
+                        <!-- Anatomical Footprint Path with Medial Arch -->
+                        <path d="M 90,20 C 130,20 155,45 155,80 C 155,115 140,140 135,165 C 130,190 140,215 140,245 C 140,285 115,305 85,305 C 55,305 40,285 40,250 C 40,215 50,195 50,165 C 50,135 45,110 50,75 C 55,40 70,20 90,20 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2.5"/>
+                        
+                        <!-- Center of Pressure (COP) Path Line -->
+                        <path id="copTrace" d="M 85,260 Q 90,210 80,160 T 110,65" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3 3" opacity="0.8"/>
+                        <!-- Center of Pressure Crosshair Marker -->
+                        <circle id="copMarker" cx="110" cy="65" r="5" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
+                      </svg>
+
+                      <!-- Dynamic Heatmap Pressure Nodes -->
+                      <!-- Node 1: Calcaneus Medial -->
+                      <div id="node1" class="absolute left-[38%] top-[80%] -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-500/80 flex items-center justify-center text-white font-mono text-[9px] font-bold shadow-md transition-all duration-300">
+                        420kPa
+                      </div>
+                      <!-- Node 2: Calcaneus Lateral -->
+                      <div id="node2" class="absolute left-[54%] top-[80%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-brand-500/70 flex items-center justify-center text-white font-mono text-[9px] font-bold shadow-md transition-all duration-300">
+                        380kPa
+                      </div>
+                      <!-- Node 3: Midfoot Lateral Arch -->
+                      <div id="node3" class="absolute left-[55%] top-[55%] -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-emerald-500/80 flex items-center justify-center text-white font-mono text-[8px] font-bold shadow-xs transition-all duration-300">
+                        110kPa
+                      </div>
+                      <!-- Node 4: 1st Metatarsal (Ball) -->
+                      <div id="node4" class="absolute left-[32%] top-[34%] -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-brand-600/90 flex items-center justify-center text-white font-mono text-[9px] font-bold shadow-md transition-all duration-300 animate-pulse-subtle">
+                        680kPa
+                      </div>
+                      <!-- Node 5: 2nd Metatarsal -->
+                      <div id="node5" class="absolute left-[46%] top-[31%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-brand-500/70 flex items-center justify-center text-white font-mono text-[8px] font-bold shadow-xs transition-all duration-300">
+                        510kPa
+                      </div>
+                      <!-- Node 6: 5th Metatarsal Lateral -->
+                      <div id="node6" class="absolute left-[64%] top-[36%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-amber-500/80 flex items-center justify-center text-white font-mono text-[8px] font-bold shadow-xs transition-all duration-300">
+                        320kPa
+                      </div>
+                      <!-- Node 7: Lesser Toes -->
+                      <div id="node7" class="absolute left-[60%] top-[18%] -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-emerald-500/80 flex items-center justify-center text-white font-mono text-[8px] font-bold shadow-xs transition-all duration-300">
+                        140kPa
+                      </div>
+                      <!-- Node 8: Hallux (Big Toe) -->
+                      <div id="node8" class="absolute left-[40%] top-[12%] -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-600/90 flex items-center justify-center text-white font-mono text-[9px] font-bold shadow-md transition-all duration-300 animate-pulse-subtle">
+                        750kPa
+                      </div>
+                    </div>
+
+                    <!-- Pressure Legend -->
+                    <div class="w-full mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+                      <span>Low (0 kPa)</span>
+                      <div class="h-2 w-32 rounded-full bg-gradient-to-r from-emerald-400 via-amber-400 to-brand-600"></div>
+                      <span>High (1,500 kPa)</span>
+                    </div>
+                  </div>
+
+                  <!-- Right: Biomechanical Gait Simulation Controls -->
+                  <div class="md:col-span-6 space-y-4">
+                    <div>
+                      <div class="text-xs font-bold text-brand-600 uppercase tracking-wider">Dynamic Biomechanical Analysis</div>
+                      <h4 class="text-lg font-bold text-slate-900 mt-1">Real-Time Gait &amp; Plantar Distribution</h4>
+                      <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                        Select a phase to simulate live pressure redistribution across the 8 embedded sensors during different industrial operator activities.
+                      </p>
+                    </div>
+
+                    <!-- Gait Phase Buttons -->
+                    <div class="grid grid-cols-2 gap-2.5">
+                      <button onclick="simulateGait('heel')" class="p-3 text-left rounded-lg bg-white border border-slate-200 hover:border-brand-500 hover:bg-brand-50/50 transition-all">
+                        <div class="text-xs font-bold text-slate-900">1. Heel Strike</div>
+                        <div class="text-[11px] text-slate-500 mt-0.5">Peak calcaneus shock load</div>
+                      </button>
+                      <button onclick="simulateGait('mid')" class="p-3 text-left rounded-lg bg-white border border-slate-200 hover:border-brand-500 hover:bg-brand-50/50 transition-all">
+                        <div class="text-xs font-bold text-slate-900">2. Midstance Phase</div>
+                        <div class="text-[11px] text-slate-500 mt-0.5">Uniform arch weight dispersion</div>
+                      </button>
+                      <button onclick="simulateGait('toe')" class="p-3 text-left rounded-lg bg-white border border-slate-200 hover:border-brand-500 hover:bg-brand-50/50 transition-all">
+                        <div class="text-xs font-bold text-slate-900">3. Toe-Off Push</div>
+                        <div class="text-[11px] text-slate-500 mt-0.5">High forefoot propulsion force</div>
+                      </button>
+                      <button onclick="simulateGait('fall')" class="p-3 text-left rounded-lg bg-white border-2 border-brand-500/40 hover:border-brand-600 bg-brand-50/30 transition-all">
+                        <div class="text-xs font-bold text-brand-700 flex items-center gap-1">
+                          <span class="material-symbols-outlined text-[14px]">warning</span> 4. Fall / Slip Event
+                        </div>
+                        <div class="text-[11px] text-brand-600 mt-0.5">0-G Vector &amp; Rapid Decel</div>
+                      </button>
+                    </div>
+
+                    <!-- Telemetry Readouts -->
+                    <div class="p-3.5 rounded-xl bg-white border border-slate-200 space-y-2 text-xs">
+                      <div class="flex justify-between items-center">
+                        <span class="text-slate-500">Gait Balance Symmetry:</span>
+                        <span id="gaitBalance" class="font-mono font-bold text-emerald-600">50.2% L / 49.8% R (Nominal)</span>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="text-slate-500">Instantaneous Peak Force:</span>
+                        <span id="gaitPeak" class="font-mono font-bold text-slate-900">750 kPa (Hallux Node)</span>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="text-slate-500">Fatigue Index (Cumulative):</span>
+                        <span id="gaitFatigue" class="font-mono font-bold text-slate-800">12% Shift Load (Low)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- VIEW 3: LIVE TELEMETRY STREAM (CANVAS ACCELEROMETER) -->
+              <div id="viewTelemetry" class="hidden relative w-full bg-slate-900 text-white p-6">
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                      <span class="font-mono text-xs font-semibold text-emerald-400">EDGE_TELEMETRY_STREAM // FREQ: 100Hz</span>
+                    </div>
+                    <span class="font-mono text-[11px] text-slate-400">AES-256 ENCRYPTED PACKETS</span>
+                  </div>
+
+                  <!-- Live Canvas Accelerometer Graph -->
+                  <div class="relative w-full h-44 bg-slate-950 rounded-lg border border-slate-800 p-2 overflow-hidden flex flex-col justify-between">
+                    <div class="flex justify-between text-[10px] font-mono text-slate-400 px-2">
+                      <span class="text-brand-400">X-Axis (Lateral Tilt)</span>
+                      <span class="text-emerald-400">Y-Axis (Gravitational Normal: 1.0G)</span>
+                      <span class="text-blue-400">Z-Axis (Forward Impact)</span>
+                    </div>
+                    <canvas id="accelCanvas" class="w-full h-28" width="600" height="110"></canvas>
+                    <div class="flex justify-between text-[9px] font-mono text-slate-500 px-2">
+                      <span>T-5.0s</span>
+                      <span>T-2.5s</span>
+                      <span>CURRENT (T-0s)</span>
+                    </div>
+                  </div>
+
+                  <!-- Telemetry Metric Rows -->
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
+                    <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
+                      <div class="text-slate-400 text-[10px]">SUB-GHZ RSSI</div>
+                      <div class="text-emerald-400 text-base font-bold mt-0.5">-42 dBm</div>
+                      <div class="text-[10px] text-slate-400">Mesh Hop: Direct</div>
+                    </div>
+                    <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
+                      <div class="text-slate-400 text-[10px]">BATTERY VOLTAGE</div>
+                      <div class="text-white text-base font-bold mt-0.5">3.84 V</div>
+                      <div class="text-[10px] text-emerald-400">Kinetic Harvesting ON</div>
+                    </div>
+                    <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
+                      <div class="text-slate-400 text-[10px]">INTERNAL TEMP</div>
+                      <div class="text-white text-base font-bold mt-0.5">31.4 °C</div>
+                      <div class="text-[10px] text-slate-400">Hermetic Seal: 100%</div>
+                    </div>
+                    <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700">
+                      <div class="text-slate-400 text-[10px]">PACKET INTEGRITY</div>
+                      <div class="text-emerald-400 text-base font-bold mt-0.5">99.98%</div>
+                      <div class="text-[10px] text-slate-400">0 Packets Dropped</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Viewport Controls & Certification Footer -->
+              <div class="flex flex-wrap items-center justify-between gap-3 px-5 py-3 bg-white border-t border-slate-200 text-xs">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200">
+                    5-Tier Micro-Assembly
+                  </span>
+                  <span class="px-2.5 py-1 rounded bg-brand-50 text-brand-700 text-xs font-semibold border border-brand-200">
+                    Solid-State Core
+                  </span>
+                  <span class="hidden sm:inline-block px-2.5 py-1 rounded bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
+                    IP67 Hermetic
+                  </span>
+                </div>
+                <span class="text-xs text-slate-500 flex items-center gap-1.5 font-medium">
+                  <span class="material-symbols-outlined text-[16px] text-emerald-600">verified</span> ANSI Z41 / ISO 20345 / CE
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. OVERVIEW SECTION (EXPANSIVE COMPARISON + TIMELINE GAP) -->
+    <section class="py-20 lg:py-28 bg-white border-b border-slate-200" id="overview">
+      <div class="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        
+        <div class="max-w-4xl mb-16">
+          <div class="text-xs font-bold text-brand-600 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">crisis_alert</span>
+            The Industrial Safety Gap
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18]">
+            Traditional Safety Footwear Protects Against Impact.<br/>
+            <span class="text-slate-500 font-semibold">Smart Footwear Anticipates and Prevents Risk.</span>
+          </h2>
+          <p class="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            Conventional steel and composite caps shield against static punctures, yet leave workers unprotected against unassisted slips, extreme fatigue accumulation, and silent incapacitation in remote industrial facilities.
+          </p>
+        </div>
+
+        <!-- 2-Card Comparative Architecture -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+          
+          <!-- Card 1: Traditional Work Boots (Passive Model) -->
+          <div class="rounded-2xl bg-slate-50 border border-slate-200 p-8 sm:p-10 flex flex-col justify-between space-y-8 shadow-xs">
+            <div class="space-y-5">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200 text-slate-700 text-xs font-semibold">
+                <span class="material-symbols-outlined text-[16px] text-slate-500">shield</span>
+                Passive Protection Model
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">Standard Safety Boots</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Static mechanical safeguards designed solely to absorb mechanical crushing forces without contextual situational awareness or communication capabilities.
+              </p>
+            </div>
+
+            <!-- Bullet Failure Scenarios -->
+            <div class="space-y-3.5 pt-2">
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-slate-200">
+                <div class="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center text-brand-600 shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-[18px]">close</span>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900">Zero Incident Telemetry</h4>
+                  <p class="text-xs text-slate-500 mt-1 leading-relaxed">Cannot register abnormal slips, high-G falls, zero-gravity free-fall, or prolonged operator immobility.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-slate-200">
+                <div class="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center text-brand-600 shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-[18px]">close</span>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900">Blind to Worker Fatigue</h4>
+                  <p class="text-xs text-slate-500 mt-1 leading-relaxed">No diagnostic visibility into posture degradation, asymmetric load distribution, or cumulative joint strain.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-slate-200">
+                <div class="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center text-brand-600 shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-[18px]">close</span>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900">Delayed Escalation Window (45–180 Min)</h4>
+                  <p class="text-xs text-slate-500 mt-1 leading-relaxed">Injured workers in blind spots, subterranean shafts, or offshore modules often remain undiscovered until end-of-shift muster.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-5 border-t border-slate-200 flex items-center justify-between text-xs">
+              <span class="font-semibold text-slate-400 uppercase tracking-wide">Paradigm: Reactive Post-Incident Response</span>
+              <span class="text-brand-600 font-bold">High Unmitigated Risk</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Apex Connected Sole (Proactive Cyber-Physical System) -->
+          <div class="rounded-2xl bg-white border-2 border-brand-500/30 p-8 sm:p-10 flex flex-col justify-between space-y-8 shadow-lg relative">
+            <div class="absolute -top-3.5 right-8 bg-brand-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-sm flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+              Connected Architecture
+            </div>
+
+            <div class="space-y-5">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-xs font-semibold">
+                <span class="material-symbols-outlined text-[16px] text-brand-600">verified</span>
+                Proactive Cyber-Physical System
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">Apex Smart Safety Sole</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                An embedded edge-computing sole that continuously samples plantar pressure at 100 Hz, evaluates posture vectors locally, and transmits distress packets instantly through subterranean-grade mesh.
+              </p>
+            </div>
+
+            <!-- Bullet Active Solutions -->
+            <div class="space-y-3.5 pt-2">
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="w-7 h-7 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900">Real-Time Man-Down Detection (&lt; 1.2s)</h4>
+                  <p class="text-xs text-slate-600 mt-1 leading-relaxed">Zero-gravity free-fall recognition coupled with violent impact vector verification triggers autonomous dispatch in under 1.2 seconds.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="w-7 h-7 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900">Preventative Ergonomic &amp; Slip Alerts</h4>
+                  <p class="text-xs text-slate-600 mt-1 leading-relaxed">Continuous 100 Hz load profiling tracks gait asymmetry, detects micro-slips on slick surfaces, and alerts shift supervisors before injuries occur.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="w-7 h-7 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900">Autonomous Subterranean Mesh Telemetry</h4>
+                  <p class="text-xs text-slate-600 mt-1 leading-relaxed">Direct Sub-GHz radio packets penetrate reinforced concrete and steel bulkheads without cellular reception or mobile app pairing.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-5 border-t border-slate-200 flex items-center justify-between text-xs">
+              <span class="font-bold text-brand-700 uppercase tracking-wide">Paradigm: Deterministic Preventative Safety</span>
+              <span class="text-emerald-600 font-bold flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">check</span> 99.7% Risk Reduction
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Incident Response Timeline Comparison Bar -->
+        <div class="mt-14 p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Critical Life-Saving Comparison</span>
+              <h3 class="text-xl font-bold text-slate-900 mt-1">Incident Escalation &amp; Rescue Response Window</h3>
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-xs font-semibold text-emerald-800">
+              <span class="material-symbols-outlined text-[16px]">timer</span> The "Golden Hour" Trauma Window
+            </div>
+          </div>
+
+          <!-- Timeline Comparison Graphic -->
+          <div class="space-y-5">
+            <!-- Conventional Boot Timeline -->
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs font-semibold text-slate-600">
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span> Traditional Safety Footwear: Unnoticed Worker Fall</span>
+                <span class="text-brand-600 font-bold">45 – 180 Minutes (Delayed Discovery)</span>
+              </div>
+              <div class="w-full h-3.5 bg-slate-200 rounded-full overflow-hidden">
+                <div class="w-full h-full bg-slate-400 rounded-full"></div>
+              </div>
+              <div class="text-[11px] text-slate-500 italic">Critical delay increases fatality &amp; permanent disability risks exponentially in lone-worker zones.</div>
+            </div>
+
+            <!-- Apex Smart Sole Timeline -->
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs font-semibold text-slate-900">
+                <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-brand-600"></span> Apex SoleTech: Autonomous Edge Fall Vector &amp; Sub-Meter Dispatch</span>
+                <span class="text-emerald-600 font-bold">&lt; 1.2 Seconds (Instant Escalation)</span>
+              </div>
+              <div class="w-full h-3.5 bg-slate-200 rounded-full overflow-hidden flex">
+                <div class="w-3 h-full bg-brand-600 rounded-full animate-pulse"></div>
+              </div>
+              <div class="text-[11px] text-emerald-700 font-semibold">Immediate on-site medic dispatch with floor plan coordinates within the first 72 seconds.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. ARCHITECTURE SECTION (5-LAYER HARDWARE STACK + END-TO-END PIPELINE) -->
+    <section class="py-20 lg:py-28 bg-slate-50 border-b border-slate-200" id="architecture">
+      <div class="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        
+        <div class="max-w-4xl mb-16">
+          <div class="text-xs font-bold text-brand-600 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">precision_manufacturing</span>
+            Mechanical &amp; Hardware Integration
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18]">
+            Engineered 5-Layer Sole Stack
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            Our patented five-tier composite assembly integrates sensitive industrial electronics directly between an anti-puncture Kevlar barrier and an ergonomic memory cushion.
+          </p>
+        </div>
+
+        <!-- 5-Layer Hardware Cards Grid (Spacious responsive columns) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-20">
+          
+          <!-- Layer 01 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition-all">
+            <div class="space-y-4">
+              <div class="w-11 h-11 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900 font-bold text-sm font-mono">
+                01
+              </div>
+              <h3 class="text-base font-bold text-slate-900">Puncture &amp; Outsole Armor</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Nitrile slip-resistant compound bonded with a 1,100 N puncture-resistant composite plate meeting ISO 20345 benchmarks.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 space-y-1">
+              <div class="text-[11px] text-slate-500 font-medium">Grade: Vulcanized Nitrile</div>
+              <div class="text-[11px] text-emerald-600 font-semibold">Rating: SRC Anti-Slip</div>
+            </div>
+          </div>
+
+          <!-- Layer 02 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition-all">
+            <div class="space-y-4">
+              <div class="w-11 h-11 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 font-bold text-sm font-mono">
+                02
+              </div>
+              <h3 class="text-base font-bold text-slate-900">Ballistic Kevlar Plate</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Multi-axial aramid fiber shield isolating electronic payloads from nail punctures, sharp metal shards, and thermal conduction.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 space-y-1">
+              <div class="text-[11px] text-slate-500 font-medium">Resistance: 1,100 N Force</div>
+              <div class="text-[11px] text-amber-700 font-semibold">Standard: EN ISO 20345 §5.8.2</div>
+            </div>
+          </div>
+
+          <!-- Layer 03 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition-all">
+            <div class="space-y-4">
+              <div class="w-11 h-11 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-700 font-bold text-sm font-mono">
+                03
+              </div>
+              <h3 class="text-base font-bold text-slate-900">Tactile Sensor Matrix</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                8-zone piezoresistive grid embedded in flex-PCB film, registering dynamic plantar loads up to 1,500 kPa per node.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 space-y-1">
+              <div class="text-[11px] text-slate-500 font-medium">Sampling: 100 Hz Calibrated</div>
+              <div class="text-[11px] text-blue-600 font-semibold">Resolution: 0.1 kPa Sensitivity</div>
+            </div>
+          </div>
+
+          <!-- Layer 04 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition-all">
+            <div class="space-y-4">
+              <div class="w-11 h-11 rounded-lg bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600 font-bold text-sm font-mono">
+                04
+              </div>
+              <h3 class="text-base font-bold text-slate-900">Edge MCU &amp; Kinetic Cell</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Ultra-low-power 32-bit ARM Cortex processor paired with 6-DoF IMU and heel-strike kinetic micro-generators for 72h runtime.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 space-y-1">
+              <div class="text-[11px] text-slate-500 font-medium">Security: AES-256 Crypto</div>
+              <div class="text-[11px] text-brand-600 font-semibold">RF: Sub-GHz + BLE Mesh</div>
+            </div>
+          </div>
+
+          <!-- Layer 05 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6 flex flex-col justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition-all">
+            <div class="space-y-4">
+              <div class="w-11 h-11 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-800 font-bold text-sm font-mono">
+                05
+              </div>
+              <h3 class="text-base font-bold text-slate-900">Upper Ergonomic Insole</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Breathable anti-static ergonomic memory foam shield hermetically sealing internal telemetry elements against moisture.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 space-y-1">
+              <div class="text-[11px] text-slate-500 font-medium">Comfort: Dual-Density PU</div>
+              <div class="text-[11px] text-slate-700 font-semibold">Seal: IP67 Ingress Rated</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- End-to-End Signal Pipeline to Cloud -->
+        <div class="pt-10 border-t border-slate-200">
+          <div class="max-w-3xl mb-10">
+            <span class="text-xs font-bold text-brand-600 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px]">sensors</span>
+              Deterministic IoT Signal Chain
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">From Heel Strike to Emergency Dispatch</h3>
+            <p class="text-sm text-slate-600 mt-1">Local edge inference to cloud correlation in less than 1.2 seconds.</p>
+          </div>
+
+          <!-- 5-Step Pipeline Grid with Latency Markers -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-5 relative">
+            
+            <!-- Step 01 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-3.5 shadow-xs hover:border-slate-300 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider font-mono">Step 01</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600 font-mono">T+0 ms</span>
+              </div>
+              <div class="w-9 h-9 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700">
+                <span class="material-symbols-outlined text-[20px]">footprint</span>
+              </div>
+              <h4 class="text-sm font-bold text-slate-900">Kinetic Impact</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Worker footsteps trigger piezoresistive nodes, capturing dynamic load distribution across calcaneus and phalanges.
+              </p>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-3.5 shadow-xs hover:border-slate-300 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider font-mono">Step 02</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-brand-50 text-brand-600 font-mono">T+4 ms</span>
+              </div>
+              <div class="w-9 h-9 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700">
+                <span class="material-symbols-outlined text-[20px]">memory</span>
+              </div>
+              <h4 class="text-sm font-bold text-slate-900">Edge MCU Inference</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Onboard firmware evaluates zero-gravity free-fall, violent impact deceleration, and subsequent immobility thresholds locally.
+              </p>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-3.5 shadow-xs hover:border-slate-300 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider font-mono">Step 03</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600 font-mono">T+180 ms</span>
+              </div>
+              <div class="w-9 h-9 rounded-lg bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600">
+                <span class="material-symbols-outlined text-[20px]">sensors</span>
+              </div>
+              <h4 class="text-sm font-bold text-slate-900">Sub-GHz Mesh Relay</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Priority RF distress packets propagate across industrial Sub-GHz nodes and anchors, penetrating concrete and steel bulkheads.
+              </p>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-3.5 shadow-xs hover:border-slate-300 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider font-mono">Step 04</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600 font-mono">T+620 ms</span>
+              </div>
+              <div class="w-9 h-9 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700">
+                <span class="material-symbols-outlined text-[20px]">cloud</span>
+              </div>
+              <h4 class="text-sm font-bold text-slate-900">Cloud Correlation</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                High-throughput MQTT broker correlates spatial facility floor plans, worker ID, and cross-verifies shift health status.
+              </p>
+            </div>
+
+            <!-- Step 05 -->
+            <div class="bg-white rounded-xl border-2 border-brand-500/40 p-5 space-y-3.5 shadow-sm">
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold text-brand-600 uppercase tracking-wider font-mono">Step 05</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-brand-600 text-white font-mono">&lt; 1.2 sec</span>
+              </div>
+              <div class="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center text-white">
+                <span class="material-symbols-outlined text-[20px]">emergency</span>
+              </div>
+              <h4 class="text-sm font-bold text-slate-900">Supervisor Dispatch</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Targeted emergency notification with sub-meter location pinpointing dispatched to on-site medical staff and control room.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. DEDICATED BIOMECHANICS & PLANTAR PRESSURE HEATMAP SECTION -->
+    <section class="py-20 lg:py-28 bg-white border-b border-slate-200" id="biomechanics">
+      <div class="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        
+        <div class="max-w-4xl mb-16">
+          <div class="text-xs font-bold text-brand-600 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">biotech</span>
+            Biomechanical Telemetry &amp; Gait Profiling
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18]">
+            Continuous 100 Hz Plantar Force Telemetry
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            High-density piezoresistive nodes map dynamic load shifting across every phase of the worker gait cycle, anticipating fatigue degradation, improper lifting, and micro-slips.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left: Heatmap Canvas Simulation -->
+          <div class="lg:col-span-5 bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center shadow-xs">
+            <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">Calibrated 8-Point Force Matrix Visualizer</div>
+            
+            <div class="relative w-64 h-96 flex items-center justify-center">
+              <svg class="w-full h-full drop-shadow-xs" viewBox="0 0 200 320" fill="none">
+                <path d="M 90,20 C 130,20 155,45 155,80 C 155,115 140,140 135,165 C 130,190 140,215 140,245 C 140,285 115,305 85,305 C 55,305 40,285 40,250 C 40,215 50,195 50,165 C 50,135 45,110 50,75 C 55,40 70,20 90,20 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5"/>
+                <path d="M 85,260 Q 90,210 80,160 T 110,65" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3 3" opacity="0.8"/>
+                <circle cx="110" cy="65" r="5" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
+              </svg>
+
+              <!-- Dynamic Interactive Nodes -->
+              <div class="absolute left-[38%] top-[80%] -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-500/80 flex items-center justify-center text-white font-mono text-[9px] font-bold shadow-md">
+                420kPa
+              </div>
+              <div class="absolute left-[54%] top-[80%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-brand-500/70 flex items-center justify-center text-white font-mono text-[9px] font-bold shadow-md">
+                380kPa
+              </div>
+              <div class="absolute left-[55%] top-[55%] -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-emerald-500/80 flex items-center justify-center text-white font-mono text-[8px] font-bold shadow-xs">
+                110kPa
+              </div>
+              <div class="absolute left-[32%] top-[34%] -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-brand-600/90 flex items-center justify-center text-white font-mono text-[9px] font-bold shadow-md animate-pulse-subtle">
+                680kPa
+              </div>
+              <div class="absolute left-[46%] top-[31%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-brand-500/70 flex items-center justify-center text-white font-mono text-[8px] font-bold shadow-xs">
+                510kPa
+              </div>
+              <div class="absolute left-[64%] top-[36%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-amber-500/80 flex items-center justify-center text-white font-mono text-[8px] font-bold shadow-xs">
+                320kPa
+              </div>
+              <div class="absolute left-[60%] top-[18%] -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-emerald-500/80 flex items-center justify-center text-white font-mono text-[8px] font-bold shadow-xs">
+                140kPa
+              </div>
+              <div class="absolute left-[40%] top-[12%] -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-600/90 flex items-center justify-center text-white font-mono text-[9px] font-bold shadow-md animate-pulse-subtle">
+                750kPa
+              </div>
+            </div>
+
+            <div class="w-full mt-4 pt-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+              <span class="font-medium">0 kPa (Unweighted)</span>
+              <div class="h-2 w-36 rounded-full bg-gradient-to-r from-emerald-400 via-amber-400 to-brand-600"></div>
+              <span class="font-medium">1,500 kPa (Max Peak)</span>
+            </div>
+          </div>
+
+          <!-- Right: Detailed Telemetry Insights -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Sampling Cadence</div>
+                <div class="text-2xl font-bold text-slate-900 mt-1">100 Hz I2C</div>
+                <p class="text-xs text-slate-600 mt-1">Sub-10ms latency per sensor array sweep.</p>
+              </div>
+              <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Dynamic Range</div>
+                <div class="text-2xl font-bold text-slate-900 mt-1">0 – 1,500 kPa</div>
+                <p class="text-xs text-slate-600 mt-1">Calibrated for static and heavy dynamic impact.</p>
+              </div>
+              <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Gait Symmetry</div>
+                <div class="text-2xl font-bold text-emerald-600 mt-1">99.4% Match</div>
+                <p class="text-xs text-slate-600 mt-1">Bilaterally synchronized RF timestamping.</p>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
+              <h4 class="text-base font-bold text-slate-900">Biomechanical Risk Prevention Applications</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-600">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-600 text-[20px] shrink-0">speed</span>
+                  <div>
+                    <span class="font-bold text-slate-900 block">Micro-Slip Detection</span>
+                    Instantaneous coefficient of friction drop alerts the operator prior to full balance loss.
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-600 text-[20px] shrink-0">airline_seat_recline_extra</span>
+                  <div>
+                    <span class="font-bold text-slate-900 block">Lifting Posture Guard</span>
+                    Asymmetric plantar loading during heavy lifting advises operators to rebalance spinal alignment.
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-600 text-[20px] shrink-0">hourglass_bottom</span>
+                  <div>
+                    <span class="font-bold text-slate-900 block">Cumulative Shift Fatigue</span>
+                    Calculates standing duty-cycle and prompts rotation before musculoskeletal strain threshold trips.
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-600 text-[20px] shrink-0">accessible_forward</span>
+                  <div>
+                    <span class="font-bold text-slate-900 block">Limping &amp; Sprain Warning</span>
+                    Detects acute antalgic gait adaptations following unnoticed ankle rolls or heel trauma.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. APPLICATIONS SECTION (EXPANSIVE 4 VERTICALS) -->
+    <section class="py-20 lg:py-28 bg-slate-50 border-b border-slate-200" id="applications">
+      <div class="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        
+        <div class="max-w-4xl mb-16">
+          <div class="text-xs font-bold text-brand-600 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">domain</span>
+            Operational Verticals
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18]">
+            Engineered for Severe Industrial Environments
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            Tailored for mission-critical operations where lone-worker visibility and instant fall response directly safeguard human life.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+          
+          <!-- Card 1 -->
+          <div class="p-7 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-6 hover:border-slate-300 hover:shadow-md transition-all">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600">
+                <span class="material-symbols-outlined text-[24px]">construction</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Civil &amp; Scaffolding</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Elevated platforms and multi-tier construction sites. High-G free-fall detection triggers automated site alarms before ground impact.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-100 space-y-1">
+              <div class="text-xs font-semibold text-slate-800">Key Benefit: Elevation fall escalation</div>
+              <div class="text-[11px] text-slate-500">Compliance: OSHA 1926.501 Fall Protection</div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="p-7 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-6 hover:border-slate-300 hover:shadow-md transition-all">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600">
+                <span class="material-symbols-outlined text-[24px]">precision_manufacturing</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Heavy Manufacturing</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Automated press lines and robotic assembly facilities. Tracks worker cumulative joint strain, gait symmetry, and standing fatigue across 12-hour shifts.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-100 space-y-1">
+              <div class="text-xs font-semibold text-slate-800">Key Benefit: Ergonomic posture guard</div>
+              <div class="text-[11px] text-slate-500">ROI: 38% Reduction in MSD Work Losses</div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="p-7 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-6 hover:border-slate-300 hover:shadow-md transition-all">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600">
+                <span class="material-symbols-outlined text-[24px]">oil_barrel</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Energy &amp; Offshore</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Refineries, deep-sea platforms, and subterranean mines. Sub-GHz wireless mesh penetrates thick steel bulkheads and subterranean rock strata without line of sight.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-100 space-y-1">
+              <div class="text-xs font-semibold text-slate-800">Key Benefit: Lone-worker non-LOS mesh</div>
+              <div class="text-[11px] text-slate-500">Safety: ATEX Zone 0 Intrinsically Safe</div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="p-7 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between space-y-6 hover:border-slate-300 hover:shadow-md transition-all">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600">
+                <span class="material-symbols-outlined text-[24px]">warehouse</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Logistics &amp; Fulfillment</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                High-throughput fulfillment centers and heavy pallet logistics. Identifies improper asymmetric manual lifting loads and micro-slips on slick surfaces.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-100 space-y-1">
+              <div class="text-xs font-semibold text-slate-800">Key Benefit: Micro-slip &amp; lifting coaching</div>
+              <div class="text-[11px] text-slate-500">Coverage: 100% Floor Area Tracking</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. ACHIEVEMENTS SECTION (MILESTONES & TELEMETRY COUNTER) -->
+    <section class="py-20 lg:py-28 bg-white border-b border-slate-200" id="achievements">
+      <div class="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        
+        <div class="max-w-4xl mb-16">
+          <div class="text-xs font-bold text-brand-600 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">verified</span>
+            Proven Track Record
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18]">
+            Engineering Milestones &amp; Validations
+          </h2>
+          <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            Key operational validations, certification benchmarks, and industrial pilot milestones confirming field performance under intense conditions.
+          </p>
+        </div>
+
+        <!-- 4 Milestone Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 mb-16">
+          
+          <!-- Milestone 1 -->
+          <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7 flex flex-col justify-between shadow-xs hover:border-slate-300 transition-all">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold px-2.5 py-1 rounded bg-brand-50 text-brand-700 border border-brand-200 font-mono">Milestone 01</span>
+                <span class="text-xs text-slate-400 font-medium">Stage Completed</span>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-brand-600">
+                <span class="material-symbols-outlined text-[24px]">developer_board</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900">Functional Hardware Prototype</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Full-scale pilot iteration integrating 8 piezoresistive nodes, ARM Cortex core, and kinetic harvesters inside compliant boot test enclosures.
+              </p>
+            </div>
+            <div class="pt-4 mt-6 border-t border-slate-200 flex items-center gap-2 text-xs text-emerald-700 font-semibold">
+              <span class="material-symbols-outlined text-[18px]">check_circle</span> 100% Bench Spec Met
+            </div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7 flex flex-col justify-between shadow-xs hover:border-slate-300 transition-all">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold px-2.5 py-1 rounded bg-brand-50 text-brand-700 border border-brand-200 font-mono">Milestone 02</span>
+                <span class="text-xs text-slate-400 font-medium">Stage Completed</span>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-brand-600">
+                <span class="material-symbols-outlined text-[24px]">radar</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900">Sub-GHz Protocol Validation</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Deterministic sub-1.2s mesh packet propagation verified across multi-level subterranean concrete vaults and heavy steel hulls without line-of-sight.
+              </p>
+            </div>
+            <div class="pt-4 mt-6 border-t border-slate-200 flex items-center gap-2 text-xs text-emerald-700 font-semibold">
+              <span class="material-symbols-outlined text-[18px]">check_circle</span> 99.98% Packet Arrival
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7 flex flex-col justify-between shadow-xs hover:border-slate-300 transition-all">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold px-2.5 py-1 rounded bg-brand-50 text-brand-700 border border-brand-200 font-mono">Milestone 03</span>
+                <span class="text-xs text-slate-400 font-medium">Certified Benchmark</span>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-brand-600">
+                <span class="material-symbols-outlined text-[24px]">verified</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900">Ingress &amp; Flex Fatigue</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Exceeded ISO 20345 standards: IP67 water submersion resistance along with &gt;1.5 million flexural gait cycles without sensor degradation.
+              </p>
+            </div>
+            <div class="pt-4 mt-6 border-t border-slate-200 flex items-center gap-2 text-xs text-emerald-700 font-semibold">
+              <span class="material-symbols-outlined text-[18px]">check_circle</span> ISO &amp; ANSI Certified
+            </div>
+          </div>
+
+          <!-- Milestone 4 -->
+          <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7 flex flex-col justify-between shadow-xs hover:border-slate-300 transition-all">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold px-2.5 py-1 rounded bg-brand-50 text-brand-700 border border-brand-200 font-mono">Milestone 04</span>
+                <span class="text-xs text-slate-400 font-medium">Active Deployment</span>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-brand-600">
+                <span class="material-symbols-outlined text-[24px]">rocket_launch</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900">Enterprise Field Trials Phase</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Active commercial deployments across major petrochemical refining units and heavy logistics hubs with over 350 active connected units.
+              </p>
+            </div>
+            <div class="pt-4 mt-6 border-t border-slate-200 flex items-center gap-2 text-xs text-brand-700 font-semibold">
+              <span class="material-symbols-outlined text-[18px]">trending_up</span> Cohort In-Service
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Live Enterprise Telemetry Counters -->
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-xs grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">350+</div>
+            <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Smart Soles in Fleet</div>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-brand-600 tracking-tight">1.24M+</div>
+            <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Telemetry Hours Logged</div>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">99.98%</div>
+            <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Mesh Packet Reliability</div>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-emerald-600 tracking-tight">0</div>
+            <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">False Evacuations</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. CONTACT SECTION (EXPANSIVE 2-COLUMN PILOT APPLICATION) -->
+    <section class="py-20 lg:py-28 bg-slate-50" id="contact">
+      <div class="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-start">
+          
+          <!-- Left Column: Information & Roadmap -->
+          <div class="lg:col-span-5 space-y-8">
+            <div class="space-y-4">
+              <div class="text-xs font-bold text-brand-600 uppercase tracking-wider flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[16px]">handshake</span>
+                Enterprise Engagement
+              </div>
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18]">
+                Schedule an On-Site Industrial Evaluation
+              </h2>
+              <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+                Equip an operational shift with test footwear sole modules. Our field engineering team handles site RF gateway mapping, SCADA integration, and EHS staff training.
+              </p>
+            </div>
+
+            <!-- 4-Stage Rollout Roadmap -->
+            <div class="space-y-4 p-6 rounded-2xl bg-white border border-slate-200 shadow-xs">
+              <div class="text-xs font-bold text-slate-900 uppercase tracking-wider">Evaluation Deployment Roadmap</div>
+              
+              <div class="space-y-3 text-xs">
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-md bg-brand-600 text-white flex items-center justify-center font-mono font-bold text-[11px] shrink-0 mt-0.5">1</div>
+                  <div>
+                    <span class="font-bold text-slate-900">RF Gateway &amp; Dead-Zone Survey (Day 1)</span>
+                    <p class="text-slate-500 mt-0.5">Sub-GHz spectrum analysis and wireless repeater placement across high-risk sectors.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-md bg-brand-600 text-white flex items-center justify-center font-mono font-bold text-[11px] shrink-0 mt-0.5">2</div>
+                  <div>
+                    <span class="font-bold text-slate-900">Shift Sizing &amp; Sole Insertion (Day 3)</span>
+                    <p class="text-slate-500 mt-0.5">Compatible with all major ANSI-certified footwear brands (Red Wing, Timberland PRO, Caterpillar).</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-md bg-brand-600 text-white flex items-center justify-center font-mono font-bold text-[11px] shrink-0 mt-0.5">3</div>
+                  <div>
+                    <span class="font-bold text-slate-900">EHS &amp; SCADA Cloud Console Pairing (Day 5)</span>
+                    <p class="text-slate-500 mt-0.5">Live floor plan ingestion, alert escalation tree, and push notification paging.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-md bg-emerald-600 text-white flex items-center justify-center font-mono font-bold text-[11px] shrink-0 mt-0.5">✓</div>
+                  <div>
+                    <span class="font-bold text-slate-900">30-Day Field Evaluation Review</span>
+                    <p class="text-slate-500 mt-0.5">Comprehensive incident reduction audit, battery metrics, and shift ergonomics summary.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testing Facilities & Relations -->
+            <div class="space-y-3 text-xs text-slate-600">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-slate-400 text-[20px]">domain</span>
+                <span class="font-medium">Testing Facilities: Houston, TX • Frankfurt, Germany • Singapore</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-slate-400 text-[20px]">mail</span>
+                <span class="font-medium">Enterprise Relations: enterprise@apex-soletech.com</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-slate-400 text-[20px]">verified_user</span>
+                <span class="font-medium">Mutual NDA executed prior to industrial facility blueprints review</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive Pilot Application Form -->
+          <div class="lg:col-span-7 bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-sm">
+            <form id="pilotForm" class="space-y-5">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Full Name</label>
+                  <input class="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5" placeholder="Sarah Jenkins" required="" type="text"/>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Corporate Email</label>
+                  <input class="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5" placeholder="s.jenkins@enterprise-corp.com" required="" type="email"/>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Company / Organization</label>
+                  <input class="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5" placeholder="Atlantic Energy Systems" required="" type="text"/>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Workforce Cohort Size</label>
+                  <select id="cohortSelect" onchange="updateCohortEstimate()" class="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5">
+                    <option value="pilot">Evaluation Trial (10 – 50 boots)</option>
+                    <option value="facility">Site Rollout (50 – 250 boots)</option>
+                    <option value="enterprise">Full Fleet (250+ boots)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Real-Time Hardware Allocation Configurator Box -->
+              <div id="cohortSummary" class="p-3.5 rounded-xl bg-slate-50 border border-brand-200/80 text-xs space-y-1.5">
+                <div class="flex items-center justify-between font-bold text-slate-900">
+                  <span class="text-brand-600">Hardware Allocation Estimate:</span>
+                  <span class="font-mono text-slate-700">30-Day Dedicated Trial</span>
+                </div>
+                <div id="cohortDetails" class="text-slate-600 text-[11px] leading-relaxed">
+                  Includes: 2x Sub-GHz Industrial Gateways • 50x Smart Sole Inserts • Web EHS Live Console • On-Site Field Engineer
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Industry Vertical</label>
+                <select class="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5">
+                  <option value="construction">Civil Construction &amp; Infrastructure</option>
+                  <option value="manufacturing">Heavy Manufacturing &amp; Assembly</option>
+                  <option value="oil_gas">Petrochemical, Mining &amp; Offshore Energy</option>
+                  <option value="logistics">Warehouse &amp; Distribution Hubs</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Critical Risk Priorities (Select applicable)</label>
+                <div class="grid grid-cols-2 gap-2 text-xs text-slate-700 pt-1">
+                  <label class="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
+                    <input type="checkbox" checked class="rounded text-brand-600 focus:ring-brand-500"/>
+                    <span>Man-Down Detection</span>
+                  </label>
+                  <label class="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
+                    <input type="checkbox" checked class="rounded text-brand-600 focus:ring-brand-500"/>
+                    <span>Fatigue &amp; Ergonomics</span>
+                  </label>
+                  <label class="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
+                    <input type="checkbox" checked class="rounded text-brand-600 focus:ring-brand-500"/>
+                    <span>Sub-GHz Lone Worker Mesh</span>
+                  </label>
+                  <label class="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
+                    <input type="checkbox" class="rounded text-brand-600 focus:ring-brand-500"/>
+                    <span>Slip &amp; Skid Telemetry</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Facility Operating Conditions</label>
+                <textarea class="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5" placeholder="Describe facility conditions, subterranean levels, communication dead zones, or compliance milestones..." rows="3"></textarea>
+              </div>
+
+              <div class="pt-2">
+                <button class="w-full py-3.5 px-6 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-sm hover:shadow-md transition-all focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 flex items-center justify-center gap-2" type="submit">
+                  <span>Submit Field Pilot Application</span>
+                  <span class="material-symbols-outlined text-[18px]">send</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FORMAL CORPORATE FOOTER (EXPANSIVE FULL-WIDTH CONTAINER) -->
+  <footer class="bg-slate-900 text-slate-400 border-t border-slate-800">
+    <div class="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 xl:gap-12 mb-12">
+        
+        <!-- Col 1 -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center text-white">
+              <span class="material-symbols-outlined text-[20px]">health_and_safety</span>
+            </div>
+            <span class="font-bold text-white text-lg">Apex SoleTech</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Enterprise cyber-physical safety solutions delivering autonomous man-down telemetry and biomechanical risk protection across high-risk global industries.
+          </p>
+          <div class="text-xs text-slate-400 font-medium">
+            ISO 9001:2015 &amp; ISO 20345 Certified
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Technology</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a class="hover:text-white transition-colors" href="#architecture">5-Tier Sole Stack</a></li>
+            <li><a class="hover:text-white transition-colors" href="#architecture">Tactile Force Sensors</a></li>
+            <li><a class="hover:text-white transition-colors" href="#architecture">Edge MCU Inference</a></li>
+            <li><a class="hover:text-white transition-colors" href="#architecture">Sub-GHz Mesh Pipeline</a></li>
+            <li><a class="hover:text-white transition-colors" href="#biomechanics">Plantar Gait Heatmap</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Navigation</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a class="hover:text-white transition-colors" href="#overview">Overview &amp; Problem</a></li>
+            <li><a class="hover:text-white transition-colors" href="#architecture">Architecture</a></li>
+            <li><a class="hover:text-white transition-colors" href="#biomechanics">Biomechanics</a></li>
+            <li><a class="hover:text-white transition-colors" href="#applications">Applications</a></li>
+            <li><a class="hover:text-white transition-colors" href="#achievements">Achievements</a></li>
+            <li><a class="hover:text-white transition-colors" href="#contact">Contact &amp; Pilot</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Compliance &amp; Security</h4>
+          <div class="p-3.5 rounded-lg bg-slate-800/80 border border-slate-700 text-xs space-y-2">
+            <div class="flex justify-between">
+              <span class="text-slate-400">Data Encryption:</span>
+              <span class="font-mono font-semibold text-white">AES-256 GCM</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Service Uptime:</span>
+              <span class="font-mono font-semibold text-emerald-400">99.98% SLA</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Mesh Security:</span>
+              <span class="font-mono font-semibold text-white">Zero-Trust Key</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Hazard Rating:</span>
+              <span class="font-mono font-semibold text-white">ATEX Zone 0</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>
+          © 2026 Apex SoleTech Inc. All rights reserved. Industrial Life-Safety Solutions.
+        </div>
+        <div class="flex items-center gap-6">
+          <a class="hover:text-slate-300 transition-colors" href="#">Privacy Policy</a>
+          <a class="hover:text-slate-300 transition-colors" href="#">Telemetry Security</a>
+          <a class="hover:text-slate-300 transition-colors" href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE SUCCESS CONFIRMATION MODAL -->
+  <div id="successModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl border border-slate-200 p-8 max-w-lg w-full shadow-2xl text-center space-y-4">
+      <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
+        <span class="material-symbols-outlined text-[32px]">task_alt</span>
+      </div>
+      <h3 class="text-2xl font-bold text-slate-900">Application Received</h3>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Thank you. An Apex SoleTech field engineer has been assigned to your evaluation application. A confirmation has been dispatched with reference <span id="appRefNum" class="font-mono font-bold text-slate-900">#APX-2026-8841</span>.
+      </p>
+      <div class="p-3 bg-slate-50 rounded-lg text-xs text-slate-500 text-left font-mono space-y-1">
+        <div>• Assigned Hub: Houston Energy &amp; Field Operations Hub</div>
+        <div>• Response Timeline: Within 24 Business Hours</div>
+        <div>• Mutual NDA Draft: Sent to provided corporate email</div>
+      </div>
+      <button onclick="document.getElementById('successModal').classList.add('hidden')" class="w-full py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-colors">
+        Close Window
+      </button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // 1. Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+
+    // 2. View Switcher in 3D Architecture Card
+    const tabExplodedBtn = document.getElementById('tabExplodedBtn');
+    const tabHeatmapBtn = document.getElementById('tabHeatmapBtn');
+    const tabTelemetryBtn = document.getElementById('tabTelemetryBtn');
+
+    const viewExploded = document.getElementById('viewExploded');
+    const viewHeatmap = document.getElementById('viewHeatmap');
+    const viewTelemetry = document.getElementById('viewTelemetry');
+
+    function setActiveTab(activeBtn, activeView) {
+      [tabExplodedBtn, tabHeatmapBtn, tabTelemetryBtn].forEach(btn => {
+        btn.className = "px-3 py-1.5 rounded-md text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1.5";
+      });
+      activeBtn.className = "px-3 py-1.5 rounded-md bg-brand-600 text-white shadow-xs transition-all flex items-center gap-1.5";
+
+      viewExploded.classList.add('hidden');
+      viewHeatmap.classList.add('hidden');
+      viewTelemetry.classList.add('hidden');
+
+      activeView.classList.remove('hidden');
+
+      if (activeView === viewTelemetry) {
+        startTelemetryLoop();
+      }
+    }
+
+    if (tabExplodedBtn && tabHeatmapBtn && tabTelemetryBtn) {
+      tabExplodedBtn.addEventListener('click', () => setActiveTab(tabExplodedBtn, viewExploded));
+      tabHeatmapBtn.addEventListener('click', () => setActiveTab(tabHeatmapBtn, viewHeatmap));
+      tabTelemetryBtn.addEventListener('click', () => setActiveTab(tabTelemetryBtn, viewTelemetry));
+    }
+
+    // 3. Layer Detail Inspector in Exploded 3D view
+    const layerData = {
+      5: {
+        num: '05',
+        title: 'Ergonomic Memory Cushion Layer',
+        desc: 'Antimicrobial dual-density polyurethane with 12mm heel stack, moisture-wicking capillary channels, and electrostatic dissipation.'
+      },
+      4: {
+        num: '04',
+        title: 'Edge MCU, IMU Core & Kinetic Dynamo',
+        desc: '32-bit ARM Cortex-M4F processor running real-time fall-detection inference, paired with a sub-GHz dual-band mesh radio.'
+      },
+      3: {
+        num: '03',
+        title: '8-Point Tactile Piezoresistive Matrix',
+        desc: 'Calibrated flex-PCB nodes continuously track dynamic heel-to-toe load shifts at 100 Hz up to 1,500 kPa per node.'
+      },
+      2: {
+        num: '02',
+        title: '1,100 N Ballistic Kevlar Anti-Puncture Plate',
+        desc: 'Ballistic aramid fiber composite protecting electronic core against upward nail and jagged metal intrusions under ISO 20345.'
+      },
+      1: {
+        num: '01',
+        title: 'Nitrile High-Abrasion Outsole (SRC Rated)',
+        desc: 'Vulcanized anti-hydrocarbon synthetic rubber with multi-directional lug geometry providing maximum slip resistance on wet metal & oil.'
+      }
+    };
+
+    function selectLayer(layerNum) {
+      const data = layerData[layerNum];
+      if (data) {
+        document.getElementById('inspectorBadge').innerText = data.num;
+        document.getElementById('inspectorTitle').innerText = 'Active Layer: ' + data.title;
+        document.getElementById('inspectorDesc').innerText = data.desc;
+      }
+    }
+
+    // 4. Biomechanical Gait Simulation
+    function simulateGait(phase) {
+      const n1 = document.getElementById('node1');
+      const n2 = document.getElementById('node2');
+      const n3 = document.getElementById('node3');
+      const n4 = document.getElementById('node4');
+      const n8 = document.getElementById('node8');
+
+      const balance = document.getElementById('gaitBalance');
+      const peak = document.getElementById('gaitPeak');
+      const marker = document.getElementById('copMarker');
+
+      if (!n1) return;
+
+      if (phase === 'heel') {
+        n1.innerText = '920kPa'; n1.style.background = '#dc2626'; n1.style.transform = 'scale(1.2)';
+        n2.innerText = '840kPa'; n2.style.background = '#dc2626'; n2.style.transform = 'scale(1.15)';
+        n3.innerText = '80kPa'; n3.style.background = '#10b981'; n3.style.transform = 'scale(1)';
+        n4.innerText = '120kPa'; n4.style.background = '#10b981'; n4.style.transform = 'scale(1)';
+        n8.innerText = '60kPa'; n8.style.background = '#10b981'; n8.style.transform = 'scale(1)';
+        balance.innerText = 'Calcaneus Shock: 920 kPa (Normal Strike)';
+        balance.className = 'font-mono font-bold text-slate-900';
+        peak.innerText = '920 kPa (Calcaneus Medial)';
+        marker.setAttribute('cx', '85'); marker.setAttribute('cy', '260');
+      } else if (phase === 'mid') {
+        n1.innerText = '340kPa'; n1.style.background = '#f59e0b'; n1.style.transform = 'scale(1)';
+        n2.innerText = '310kPa'; n2.style.background = '#f59e0b'; n2.style.transform = 'scale(1)';
+        n3.innerText = '210kPa'; n3.style.background = '#f59e0b'; n3.style.transform = 'scale(1.1)';
+        n4.innerText = '450kPa'; n4.style.background = '#f59e0b'; n4.style.transform = 'scale(1)';
+        n8.innerText = '220kPa'; n8.style.background = '#10b981'; n8.style.transform = 'scale(1)';
+        balance.innerText = '50.1% L / 49.9% R (Midstance Equilibrium)';
+        balance.className = 'font-mono font-bold text-emerald-600';
+        peak.innerText = '450 kPa (1st Metatarsal)';
+        marker.setAttribute('cx', '80'); marker.setAttribute('cy', '160');
+      } else if (phase === 'toe') {
+        n1.innerText = '40kPa'; n1.style.background = '#10b981'; n1.style.transform = 'scale(0.9)';
+        n2.innerText = '30kPa'; n2.style.background = '#10b981'; n2.style.transform = 'scale(0.9)';
+        n3.innerText = '50kPa'; n3.style.background = '#10b981'; n3.style.transform = 'scale(0.9)';
+        n4.innerText = '980kPa'; n4.style.background = '#dc2626'; n4.style.transform = 'scale(1.25)';
+        n8.innerText = '1,120kPa'; n8.style.background = '#dc2626'; n8.style.transform = 'scale(1.3)';
+        balance.innerText = 'High Forefoot Propulsion Active';
+        balance.className = 'font-mono font-bold text-slate-900';
+        peak.innerText = '1,120 kPa (Hallux Great Toe)';
+        marker.setAttribute('cx', '110'); marker.setAttribute('cy', '65');
+      } else if (phase === 'fall') {
+        n1.innerText = '0kPa'; n1.style.background = '#64748b'; n1.style.transform = 'scale(0.8)';
+        n2.innerText = '0kPa'; n2.style.background = '#64748b'; n2.style.transform = 'scale(0.8)';
+        n3.innerText = '0kPa'; n3.style.background = '#64748b'; n3.style.transform = 'scale(0.8)';
+        n4.innerText = '0kPa'; n4.style.background = '#64748b'; n4.style.transform = 'scale(0.8)';
+        n8.innerText = '0kPa'; n8.style.background = '#64748b'; n8.style.transform = 'scale(0.8)';
+        balance.innerText = 'CRITICAL: 0-G FREE FALL + IMMOBILITY DETECTED';
+        balance.className = 'font-mono font-bold text-brand-600 animate-pulse';
+        peak.innerText = '0 kPa (Operator Unweighted / Inactive)';
+        alert('ALERT: Man-Down Threshold Triggered! Sub-GHz distress packet dispatched in <1.2s to on-site EHS console.');
+      }
+    }
+
+    // 5. Live Accelerometer Waveform Loop
+    let canvasLoopActive = false;
+    function startTelemetryLoop() {
+      if (canvasLoopActive) return;
+      canvasLoopActive = true;
+      const canvas = document.getElementById('accelCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let offset = 0;
+
+      function render() {
+        if (viewTelemetry.classList.contains('hidden')) {
+          canvasLoopActive = false;
+          return;
+        }
+        ctx.fillStyle = '#020617';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Grid lines
+        ctx.strokeStyle = '#1e293b';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        for (let y = 20; y < canvas.height; y += 25) {
+          ctx.moveTo(0, y); ctx.lineTo(canvas.width, y);
+        }
+        ctx.stroke();
+
+        // Waveform Y-axis (1.0G gravity baseline)
+        ctx.strokeStyle = '#10b981';
+        ctx.lineWidth = 1.8;
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x++) {
+          const val = 55 + Math.sin((x + offset) * 0.04) * 14 + Math.sin((x + offset * 1.5) * 0.1) * 6;
+          if (x === 0) ctx.moveTo(x, val);
+          else ctx.lineTo(x, val);
+        }
+        ctx.stroke();
+
+        // Waveform Z-axis (Forward stride impacts)
+        ctx.strokeStyle = '#3b82f6';
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x++) {
+          const val = 55 + Math.cos((x + offset) * 0.05) * 22;
+          if (x === 0) ctx.moveTo(x, val);
+          else ctx.lineTo(x, val);
+        }
+        ctx.stroke();
+
+        offset += 2;
+        requestAnimationFrame(render);
+      }
+      render();
+    }
+
+    // 6. Cohort Dynamic Allocation Configurator
+    function updateCohortEstimate() {
+      const select = document.getElementById('cohortSelect');
+      const details = document.getElementById('cohortDetails');
+      if (!select || !details) return;
+      if (select.value === 'pilot') {
+        details.innerText = 'Includes: 2x Sub-GHz Industrial Gateways • 50x Smart Sole Inserts • Web EHS Live Console • On-Site Field Engineer';
+      } else if (select.value === 'facility') {
+        details.innerText = 'Includes: 6x Sub-GHz Industrial Gateways • 250x Smart Sole Inserts • SCADA API Connector • 24/7 EHS Dedicated Support';
+      } else {
+        details.innerText = 'Includes: Full-Facility Sub-GHz Mesh Cluster • 250+ Custom-Fitted Soles • High-Availability Enterprise Cloud • Dedicated Implementation Team';
+      }
+    }
+
+    // 7. Form Submit Handler with Confirmation Modal
+    const pilotForm = document.getElementById('pilotForm');
+    if (pilotForm) {
+      pilotForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const randId = Math.floor(1000 + Math.random() * 9000);
+        document.getElementById('appRefNum').innerText = '#APX-2026-' + randId;
+        document.getElementById('successModal').classList.remove('hidden');
+      });
+    }
+
+    // Smooth scrolling for navigation anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
