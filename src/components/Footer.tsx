@@ -2,84 +2,93 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 text-slate-400 border-t border-slate-800">
-      <div className="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-16">
+    <footer className="bg-navy-950 text-slate-400 border-t border-purple-900/30">
+      <div className="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 xl:gap-12 mb-12">
           
-          {/* Col 1 */}
+          {/* Col 1: Brand & Logo */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center text-white">
-                <span className="material-symbols-outlined text-[20px]">health_and_safety</span>
+            <div className="flex items-center gap-3">
+              <div className="p-1 rounded-xl bg-purple-950/80 border border-purple-500/30">
+                <img
+                  src="/nirvana-logo.png"
+                  alt="NIRVANA Logo"
+                  className="h-9 w-auto object-contain rounded-lg"
+                />
               </div>
-              <span className="font-bold text-white text-lg">Apex SoleTech</span>
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Enterprise cyber-physical safety solutions delivering autonomous man-down telemetry and biomechanical risk protection across high-risk global industries.
+            <p className="text-xs text-slate-400 leading-relaxed font-normal">
+              NIRVANA is a universal SOS safety device platform designed to provide emergency assistance wherever and however the user needs it.
             </p>
-            <div className="text-xs text-slate-400 font-medium">
-              ISO 9001:2015 &amp; ISO 20345 Certified
+            <div className="text-xs text-purple-300 font-mono font-medium">
+              Universal Personal Safety Technology &bull; 2026
             </div>
           </div>
 
-          {/* Col 2 */}
+          {/* Col 2: Core Platform Capabilities */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Technology</h4>
+            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">
+              Capabilities
+            </h4>
             <ul className="space-y-2 text-xs">
-              <li><a className="hover:text-white transition-colors" href="#architecture">5-Tier Sole Stack</a></li>
-              <li><a className="hover:text-white transition-colors" href="#architecture">Tactile Force Sensors</a></li>
-              <li><a className="hover:text-white transition-colors" href="#architecture">Edge MCU Inference</a></li>
-              <li><a className="hover:text-white transition-colors" href="#architecture">Sub-GHz Mesh Pipeline</a></li>
-              <li><a className="hover:text-white transition-colors" href="#biomechanics">Plantar Gait Heatmap</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#location">Real-Time Location</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#fall-detection">Fall Detection Engine</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#sos-alert">SOS Emergency Alert</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#geofencing">Geofencing &amp; Safe Zones</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#mobile-app">Mobile Companion App</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#ecosystem">Connected Safety Network</a></li>
             </ul>
           </div>
 
-          {/* Col 3 */}
+          {/* Col 3: Usage Form Factors & Navigation */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Navigation</h4>
+            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">
+              Form Factors
+            </h4>
             <ul className="space-y-2 text-xs">
-              <li><a className="hover:text-white transition-colors" href="#overview">Overview &amp; Problem</a></li>
-              <li><a className="hover:text-white transition-colors" href="#architecture">Architecture</a></li>
-              <li><a className="hover:text-white transition-colors" href="#biomechanics">Biomechanics</a></li>
-              <li><a className="hover:text-white transition-colors" href="#applications">Applications</a></li>
-              <li><a className="hover:text-white transition-colors" href="#achievements">Achievements</a></li>
-              <li><a className="hover:text-white transition-colors" href="#contact">Contact &amp; Pilot</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#positioning">Footwear Integration</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#positioning">Wearable Attachment</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#positioning">Personal Safety Pod</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#positioning">Worker Safety</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#positioning">Emergency Assistance</a></li>
+              <li><a className="hover:text-purple-300 transition-colors" href="#achievements">Journey &amp; IP Milestones</a></li>
             </ul>
           </div>
 
-          {/* Col 4 */}
+          {/* Col 4: Verified Credentials & Encryption */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Compliance &amp; Security</h4>
-            <div className="p-3.5 rounded-lg bg-slate-800/80 border border-slate-700 text-xs space-y-2">
+            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">
+              Verified Credentials
+            </h4>
+            <div className="p-4 rounded-2xl bg-navy-900 border border-slate-800 text-xs space-y-2 font-mono">
               <div className="flex justify-between">
-                <span className="text-slate-400">Data Encryption:</span>
-                <span className="font-mono font-semibold text-white">AES-256 GCM</span>
+                <span className="text-slate-400">IP Status:</span>
+                <span className="text-purple-300 font-bold">Patent Published</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">Service Uptime:</span>
-                <span className="font-mono font-semibold text-emerald-400">99.98% SLA</span>
+                <span className="text-slate-400">Incubation:</span>
+                <span className="text-amber-400 font-bold">STPI OCP 2.0</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">Mesh Security:</span>
-                <span className="font-mono font-semibold text-white">Zero-Trust Key</span>
+                <span className="text-slate-400">Media Feature:</span>
+                <span className="text-cyan-400 font-bold">RASTA Magazine</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">Hazard Rating:</span>
-                <span className="font-mono font-semibold text-white">ATEX Zone 0</span>
+                <span className="text-slate-400">Encryption:</span>
+                <span className="text-white font-bold">AES-256 GCM</span>
               </div>
             </div>
           </div>
 
         </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
           <div>
-            © 2026 Apex SoleTech Inc. All rights reserved. Industrial Life-Safety Solutions.
+            &copy; 2026 NIRVANA. All rights reserved. Universal Personal Safety Technology.
           </div>
           <div className="flex items-center gap-6">
-            <a className="hover:text-slate-300 transition-colors" href="#">Privacy Policy</a>
-            <a className="hover:text-slate-300 transition-colors" href="#">Telemetry Security</a>
-            <a className="hover:text-slate-300 transition-colors" href="#">Terms of Service</a>
+            <span className="text-slate-400">"Safety shouldn't depend on having your phone in your hand."</span>
           </div>
         </div>
       </div>

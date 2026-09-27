@@ -5,196 +5,199 @@ interface ContactProps {
 }
 
 export const Contact: React.FC<ContactProps> = ({ onSuccessSubmit }) => {
-  const [cohortSize, setCohortSize] = useState('pilot');
-
-  const cohortDetailsMap: Record<string, string> = {
-    pilot:
-      'Includes: 2x Sub-GHz Industrial Gateways • 50x Smart Sole Inserts • Web EHS Live Console • On-Site Field Engineer',
-    facility:
-      'Includes: 6x Sub-GHz Industrial Gateways • 250x Smart Sole Inserts • SCADA API Connector • 24/7 EHS Dedicated Support',
-    enterprise:
-      'Includes: Full-Facility Sub-GHz Mesh Cluster • 250+ Custom-Fitted Soles • High-Availability Enterprise Cloud • Dedicated Implementation Team',
-  };
+  const [interestArea, setInterestArea] = useState('personal');
+  const [formFactor, setFormFactor] = useState('all');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const randId = Math.floor(1000 + Math.random() * 9000);
-    onSuccessSubmit(`#APX-2026-${randId}`);
+    onSuccessSubmit(`#NRV-2026-${randId}`);
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-slate-50" id="contact">
-      <div className="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-start">
+    <section className="py-20 lg:py-28 bg-slate-50/70 border-b border-slate-200 text-slate-800 relative overflow-hidden" id="contact">
+      <div className="w-full max-w-[1760px] 2xl:max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
+        
+        {/* Final CTA Banner */}
+        <div className="rounded-3xl bg-gradient-to-r from-purple-900 via-indigo-950 to-slate-900 text-white p-8 sm:p-12 lg:p-16 mb-16 shadow-xl relative overflow-hidden text-center max-w-5xl mx-auto">
+          <div className="relative z-10 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-800/60 border border-purple-400/40 text-purple-200 text-xs font-mono font-bold tracking-widest uppercase shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              Universal Personal Safety Platform
+            </div>
+
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+              Your Safety. Your Location. Your Lifeline.
+            </h2>
+
+            <p className="text-base sm:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed font-normal">
+              NIRVANA is a small, connected safety device that can accompany you anywhere and provide location awareness, fall detection, geofencing and SOS emergency assistance.
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+              <a
+                href="#features"
+                className="px-7 py-3.5 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-semibold text-sm sm:text-base shadow-sm transition-all whitespace-nowrap"
+              >
+                Explore NIRVANA
+              </a>
+              <a
+                href="#demo-form"
+                className="px-7 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-sm sm:text-base transition-all whitespace-nowrap"
+              >
+                Request a Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Demo Request & Pilot Inquiry Form */}
+        <div id="demo-form" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto">
           
-          {/* Left Column: Information & Roadmap */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="space-y-4">
-              <div className="text-xs font-bold text-brand-600 uppercase tracking-wider flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[16px]">handshake</span>
-                Enterprise Engagement
+          {/* Left Column: Info & Verified Trust Points (5 Cols) */}
+          <div className="lg:col-span-5 space-y-6">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-mono font-bold text-purple-700 uppercase tracking-wider mb-2">
+                <span className="material-symbols-outlined text-[16px]">contact_mail</span>
+                Direct Engagement
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18]">
-                Schedule an On-Site Industrial Evaluation
-              </h2>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                Equip an operational shift with test footwear sole modules. Our field engineering team handles site RF gateway mapping, SCADA integration, and EHS staff training.
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                Request a Live Demonstration
+              </h3>
+              <p className="mt-2 text-sm text-slate-600 leading-relaxed font-normal">
+                Connect with the NIRVANA engineering and product team to experience our functional prototype, test live telemetry, or discuss pilot deployments.
               </p>
             </div>
 
-            {/* 4-Stage Rollout Roadmap */}
-            <div className="space-y-4 p-6 rounded-2xl bg-white border border-slate-200 shadow-xs">
-              <div className="text-xs font-bold text-slate-900 uppercase tracking-wider">Evaluation Deployment Roadmap</div>
-              
-              <div className="space-y-3 text-xs">
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-md bg-brand-600 text-white flex items-center justify-center font-mono font-bold text-[11px] shrink-0 mt-0.5">1</div>
-                  <div>
-                    <span className="font-bold text-slate-900">RF Gateway &amp; Dead-Zone Survey (Day 1)</span>
-                    <p className="text-slate-500 mt-0.5">Sub-GHz spectrum analysis and wireless repeater placement across high-risk sectors.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-md bg-brand-600 text-white flex items-center justify-center font-mono font-bold text-[11px] shrink-0 mt-0.5">2</div>
-                  <div>
-                    <span className="font-bold text-slate-900">Shift Sizing &amp; Sole Insertion (Day 3)</span>
-                    <p className="text-slate-500 mt-0.5">Compatible with all major ANSI-certified footwear brands (Red Wing, Timberland PRO, Caterpillar).</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-md bg-brand-600 text-white flex items-center justify-center font-mono font-bold text-[11px] shrink-0 mt-0.5">3</div>
-                  <div>
-                    <span className="font-bold text-slate-900">EHS &amp; SCADA Cloud Console Pairing (Day 5)</span>
-                    <p className="text-slate-500 mt-0.5">Live floor plan ingestion, alert escalation tree, and push notification paging.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-md bg-emerald-600 text-white flex items-center justify-center font-mono font-bold text-[11px] shrink-0 mt-0.5">✓</div>
-                  <div>
-                    <span className="font-bold text-slate-900">30-Day Field Evaluation Review</span>
-                    <p className="text-slate-500 mt-0.5">Comprehensive incident reduction audit, battery metrics, and shift ergonomics summary.</p>
-                  </div>
-                </div>
+            {/* Verified Achievements Micro-Summary */}
+            <div className="p-5 rounded-2xl bg-white border border-slate-200 space-y-3 font-mono text-xs shadow-xs">
+              <div className="text-[11px] text-purple-700 font-bold uppercase tracking-wider">
+                NIRVANA Engineering Credentials
+              </div>
+              <div className="flex items-center gap-2.5 text-slate-700">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>Innovation Patent — Published</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-slate-700">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                <span>Selected in STPI OCP 2.0</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-slate-700">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                <span>Featured in RASTA Magazine</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-slate-700">
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-600"></span>
+                <span>Functional Hardware Prototype Ready</span>
               </div>
             </div>
 
-            {/* Testing Facilities & Relations */}
-            <div className="space-y-3 text-xs text-slate-600">
-              <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-slate-400 text-[20px]">domain</span>
-                <span className="font-medium">Testing Facilities: Houston, TX • Frankfurt, Germany • Singapore</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-slate-400 text-[20px]">mail</span>
-                <span className="font-medium">Enterprise Relations: enterprise@apex-soletech.com</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-slate-400 text-[20px]">verified_user</span>
-                <span className="font-medium">Mutual NDA executed prior to industrial facility blueprints review</span>
-              </div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200 text-xs text-slate-600 space-y-1 font-mono shadow-2xs">
+              <div>Brand / Platform: <strong className="text-slate-900">NIRVANA</strong></div>
+              <div>Positioning: <span className="text-purple-700 font-semibold">Universal Personal Safety Technology</span></div>
             </div>
-
           </div>
 
-          {/* Right Column: Interactive Pilot Application Form */}
-          <div className="lg:col-span-7 bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-sm">
-            <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Right Column: Interactive Application Form (7 Cols) */}
+          <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-xs">
+            <form onSubmit={handleSubmit} className="space-y-4">
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Full Name</label>
-                  <input className="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5" placeholder="Sarah Jenkins" required type="text" />
+                  <label className="block text-xs font-mono font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Alex Morgan"
+                    className="w-full rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:border-purple-600 focus:ring-1 focus:ring-purple-600 py-2.5 px-3.5 placeholder:text-slate-400"
+                  />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Corporate Email</label>
-                  <input className="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5" placeholder="s.jenkins@enterprise-corp.com" required type="email" />
+                  <label className="block text-xs font-mono font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="alex@example.com"
+                    className="w-full rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:border-purple-600 focus:ring-1 focus:ring-purple-600 py-2.5 px-3.5 placeholder:text-slate-400"
+                  />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Company / Organization</label>
-                  <input className="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5" placeholder="Atlantic Energy Systems" required type="text" />
+                  <label className="block text-xs font-mono font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                    Organization / Profile
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Enterprise, University, or Individual"
+                    className="w-full rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:border-purple-600 focus:ring-1 focus:ring-purple-600 py-2.5 px-3.5 placeholder:text-slate-400"
+                  />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Workforce Cohort Size</label>
+                  <label className="block text-xs font-mono font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                    Area of Interest
+                  </label>
                   <select
-                    value={cohortSize}
-                    onChange={(e) => setCohortSize(e.target.value)}
-                    className="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5"
+                    value={interestArea}
+                    onChange={(e) => setInterestArea(e.target.value)}
+                    className="w-full rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:border-purple-600 focus:ring-1 focus:ring-purple-600 py-2.5 px-3.5"
                   >
-                    <option value="pilot">Evaluation Trial (10 – 50 boots)</option>
-                    <option value="facility">Site Rollout (50 – 250 boots)</option>
-                    <option value="enterprise">Full Fleet (250+ boots)</option>
+                    <option value="personal">Personal / Family Safety</option>
+                    <option value="elderly">Elderly &amp; Assistive Care</option>
+                    <option value="worker">Lone Worker &amp; Industrial Safety</option>
+                    <option value="student">Campus &amp; Student Safety</option>
+                    <option value="pilot">Enterprise Pilot Evaluation</option>
                   </select>
                 </div>
               </div>
 
-              {/* Dynamic Hardware Configurator Summary */}
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-brand-200/80 text-xs space-y-1.5">
-                <div className="flex items-center justify-between font-bold text-slate-900">
-                  <span className="text-brand-600">Hardware Allocation Estimate:</span>
-                  <span className="font-mono text-slate-700">30-Day Dedicated Trial</span>
-                </div>
-                <div className="text-slate-600 text-[11px] leading-relaxed">
-                  {cohortDetailsMap[cohortSize]}
-                </div>
-              </div>
-
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Industry Vertical</label>
-                <select className="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5">
-                  <option value="construction">Civil Construction &amp; Infrastructure</option>
-                  <option value="manufacturing">Heavy Manufacturing &amp; Assembly</option>
-                  <option value="oil_gas">Petrochemical, Mining &amp; Offshore Energy</option>
-                  <option value="logistics">Warehouse &amp; Distribution Hubs</option>
+                <label className="block text-xs font-mono font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                  Form Factor Application Interest
+                </label>
+                <select
+                  value={formFactor}
+                  onChange={(e) => setFormFactor(e.target.value)}
+                  className="w-full rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:border-purple-600 focus:ring-1 focus:ring-purple-600 py-2.5 px-3.5"
+                >
+                  <option value="all">Universal Platform (All Form Factors)</option>
+                  <option value="footwear">Footwear Insole Integration</option>
+                  <option value="clip">Wearable Clip / Bag Mount</option>
+                  <option value="pocket">Discreet Palm / Pocket Pod</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Critical Risk Priorities (Select applicable)</label>
-                <div className="grid grid-cols-2 gap-2 text-xs text-slate-700 pt-1">
-                  <label className="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
-                    <input type="checkbox" defaultChecked className="rounded text-brand-600 focus:ring-brand-500" />
-                    <span>Man-Down Detection</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
-                    <input type="checkbox" defaultChecked className="rounded text-brand-600 focus:ring-brand-500" />
-                    <span>Fatigue &amp; Ergonomics</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
-                    <input type="checkbox" defaultChecked className="rounded text-brand-600 focus:ring-brand-500" />
-                    <span>Sub-GHz Lone Worker Mesh</span>
-                  </label>
-                  <label className="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200">
-                    <input type="checkbox" className="rounded text-brand-600 focus:ring-brand-500" />
-                    <span>Slip &amp; Skid Telemetry</span>
-                  </label>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Facility Operating Conditions</label>
+                <label className="block text-xs font-mono font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                  Operating Scenario or Requirements
+                </label>
                 <textarea
-                  className="w-full rounded-lg border-slate-300 bg-white text-slate-900 text-sm focus:border-brand-500 focus:ring-brand-500 py-2.5 px-3.5"
-                  placeholder="Describe facility conditions, subterranean levels, communication dead zones, or compliance milestones..."
                   rows={3}
+                  placeholder="Tell us about your specific safety requirements, cohort size, or evaluation timeline..."
+                  className="w-full rounded-lg border border-slate-300 bg-white text-slate-900 text-sm focus:border-purple-600 focus:ring-1 focus:ring-purple-600 py-2.5 px-3.5 placeholder:text-slate-400"
                 />
               </div>
 
               <div className="pt-2">
                 <button
-                  className="w-full py-3.5 px-6 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-sm hover:shadow-md transition-all focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 flex items-center justify-center gap-2"
                   type="submit"
+                  className="w-full py-3.5 px-6 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-semibold text-sm shadow-xs transition-all flex items-center justify-center gap-2"
                 >
-                  <span>Submit Field Pilot Application</span>
+                  <span>Submit Demo &amp; Pilot Request</span>
                   <span className="material-symbols-outlined text-[18px]">send</span>
                 </button>
               </div>
+
             </form>
           </div>
 
         </div>
+
       </div>
     </section>
   );
